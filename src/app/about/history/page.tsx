@@ -1,5 +1,73 @@
-import type { Metadata } from 'next';
-import { PageHero, Photo, Eyebrow, SourceNote, Closing, TextLink } from '@/components/ui';
-import { milestones } from '@/lib/content';
-export const metadata:Metadata={title:'History & recognition',description:'Explore America On Track’s history since 1995, including youth programs, education awards, federal grants, and community health milestones.'};
-export default function History(){return <><PageHero label="Since 1995" title={<>A brighter future.<br/><em>Years in the making.</em></>} description="A few milestones from a continuing commitment to Orange County’s young people, families, and communities."/><section className="timeline wrap">{milestones.map(([year,title,text])=><article className="timeline-item" key={year}><span>{year}</span><div><h2>{title}</h2><p>{text}</p></div></article>)}</section><section className="archive-band"><div className="wrap"><Photo src="award.jpg" alt="America On Track founders receiving recognition at the White House; the archival photograph is labeled November 1998"/><div><Eyebrow>From the organization’s archive</Eyebrow><h2>National recognition.<br/>Local commitment.</h2><p>The founders received the President’s Service Award for outstanding service to youth. The dedicated Awards page and archival photograph date the White House recognition to November 1998; the Emerging Leaders page lists 1999. We retain the recognition while making that source discrepancy explicit.</p><SourceNote slug="awards">Selected awards and historical milestones are based on the organization’s published archive.</SourceNote></div></div></section><section className="wrap impact-stories"><article><Eyebrow>Recognition, over time</Eyebrow><h2>Service worth celebrating.</h2><p>Other published honors include the 1997 Orange County Spirit of Volunteerism Award, the 2000 Ambassadors of Peace Award, and the 2009 Women Making a Difference Award recognizing the co-founders.</p><TextLink href="https://americaontrack.org/awards/">Explore the full awards archive</TextLink></article><article><Eyebrow>Institutional support</Eyebrow><h2>Programs backed by partners.</h2><p>The awards archive documents government, corporate, and foundation support, including nutrition education grants from 2013–2020 and a five-year California tobacco-control grant awarded in 2020. These are historical awards; current funding terms are not represented here.</p><TextLink href="/contact">Ask about partnering</TextLink></article></section><Closing/></>}
+import { Intro, Photo, Source, Invitation } from "@/components/elements";
+import { milestones } from "@/lib/content";
+export const metadata = { title: "History & recognition" };
+export default function History() {
+  return (
+    <>
+      <Intro
+        eyebrow="The America On Track archive"
+        title="A commitment."
+        accent="Still unfolding."
+      >
+        <p>
+          From two founders studying local needs to decades of mentoring,
+          learning, and community health. Open a few chapters of the story.
+        </p>
+      </Intro>
+      <section className="archive wrap" aria-label="Historical chapters">
+        <div className="archive-folios">
+          {milestones.map(([year, title, text]) => (
+            <article className="folio" key={year}>
+              <span className="year">{year}</span>
+              <h2>{title}</h2>
+              <p>{text}</p>
+            </article>
+          ))}
+        </div>
+        <div className="award-feature">
+          <Photo
+            name="award.jpg"
+            alt="Terry Thompson and Claire Braeburn receiving recognition at the White House"
+          />
+          <div>
+            <p className="eyebrow">From the archive · National recognition</p>
+            <h2>
+              Service that
+              <br />
+              <em>was seen.</em>
+            </h2>
+            <p>
+              The founders received the President’s Service Award for their work
+              with young people. The Awards page and archival photograph
+              identify November 1998; the Emerging Leaders page gives 1999.
+            </p>
+            <Source path="awards">Explore the complete awards archive</Source>
+          </div>
+        </div>
+        <div className="disclosures">
+          <details>
+            <summary>Education, prevention, and community recognition</summary>
+            <p>
+              The published archive includes the 1997 Outstanding Contributions
+              to Education Award; the 2000 Ambassadors of Peace Award; the 2001
+              Outstanding Supporters of Prevention Award; the 2009 Women Making
+              a Difference Award; and the 2010 Community Building Award for the
+              Memorial Exercise Park.
+            </p>
+          </details>
+          <details>
+            <summary>Long-term investment in healthier communities</summary>
+            <p>
+              The archive records Physical Education Program grants in 2007,
+              2011, and 2016; nutrition education grants from 2013–2020; and
+              tobacco-prevention and tobacco-control grants. These are
+              historical awards, not claims of current funding.
+            </p>
+          </details>
+        </div>
+        <Source path="our-story">The founding story</Source>
+      </section>
+      <Invitation />
+    </>
+  );
+}

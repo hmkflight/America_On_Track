@@ -1,145 +1,135 @@
-# America On Track — Website Redesign
+# America On Track — Total Creative Rebuild
 
-Status: complete local presentation proposal. Not deployed. No git repository initialized, commits created, or changes pushed.
+Status: new implementation complete; local-only production preview. No public deployment, commit, or push.
 
-## Timing
+## Timing and preview
 
-- Start: October 2, 2026, 20:00:13 UTC (1:00 PM Pacific).
-- End: October 3, 2026, 21:31 UTC (2:31 PM Pacific).
-- Elapsed: approximately 25 hours 31 minutes wall-clock, including approval/session pauses.
-- Elapsed is wall-clock session time, including long approval/session pauses; it is not a claim of continuous hands-on development time.
+- Work began approximately October 7, 2026, 07:22 UTC (12:22 AM Pacific).
+- Completion time and final verification totals are recorded in the closeout below.
+- Continuous work session; timing includes research, implementation, tool execution, browser review, and short permission waits, rather than claiming every minute was manual editing.
+- Local production URL: **http://127.0.0.1:3017**.
 
-## Preview and implementation
+## Research and factual continuity
 
-http://127.0.0.1:3000 — production build, bound to the local machine.
+Freshly retrieved all 21 published first-party pages through the public WordPress API on October 7. Compared source content to earlier snapshots and reread programs, audience definitions, founders, governance, history, results, awards, volunteering, giving, public-health work, contact details, and golf information. Twenty content objects were unchanged; the golf page retained its October 26, 2026 event details while generated countdown content changed.
 
-Next.js 16.3.8, React 19.3, TypeScript 5.9. Server-rendered and statically generated content with small client boundaries for navigation and program exploration. No backend, accounts, CMS, analytics, payment collection or synthetic form submission. Responsive Next Image optimization, local fonts, page metadata, favicon, 404 and robots settings included. This proposal deliberately blocks indexing and does not claim canonical ownership of americaontrack.org.
+The current 2026 golf page and dated schedule remain the evidence for The Huntington Club venue and 9 AM / 11 AM / 4:30 PM schedule. All nine linked official forms were matched to the fresh source capture. All 30 checked organization/form/PDF URLs returned HTTP 200.
 
-## Research actually performed
+Preserved previous raw evidence, asset provenance, content audit, factual conflicts, accurate program descriptions, names and affiliations as published, and all 13 authentic images. No invented people, results, programs, testimonials, or event sponsors. The 2019 figures remain explicitly historical and distinguish repeated service contacts from unique people. Undated annual reach and expense-ratio figures are not promoted as current facts. The 1998/1999 service-award discrepancy remains visible.
 
-Inspected all 21 published first-party pages through the public WordPress API, homepage HTML, the sitemap index and page sitemap, linked forms and the 2026 golf schedule PDF. Source snapshots are in `research/raw/`; exact links and source modification dates are in [SOURCES.md](research/SOURCES.md).
+Evidence: `research/FRESH_RESEARCH.md`, `research/SOURCES.md`, `research/FACTS.md`, `research/ASSETS.md`, and `research/raw/pages-2026-10-07.json`.
 
-Coverage: Home, Our Story, both founders, Board/Honorary/Advisory lists, Emerging Leaders, Brighter Futures, Fitness, Nutrition, Drug-Use Prevention, three tobacco pages, Results, Awards, Volunteer, Donate, Contact, Golf, Privacy and SMS disclosure. Media inspection used a source contact sheet and actual images. No unrelated recursive web crawl.
+## What was removed
 
-Important findings: founded 1995; founders Terry Thompson and Claire Braeburn; youth, family and community mission; Emerging Leaders grades 4–12; free five-component Brighter Futures program established 2004; substantial school health and tobacco-policy work; 10 Directors plus four Honorary and four Advisory members on the published roster; Santa Ana contact details; current published golf event October 26, 2026 at The Huntington Club.
+Deleted the old application and component contents before creating the new route implementation. Removed the previous header, UI helpers, connection map, and three-scale explorer. Replaced every page composition, root layout, global CSS, footer, favicon, and navigation. Removed Barlow Condensed/Manrope font binaries and production licenses and the unused agent-browser dependency. Replaced the QA suite and obsolete link-check utility. The old asset-download utility and build report are archived as provenance; old browser images are comparison evidence under `qa/previous/`.
 
-## Facts and conflicts
+No retired layout, stylesheet, component, network explorer, alternative route, or creative headline is imported into the running application. The reusable factual data was kept in `src/lib/content.ts`, with the unused old short headlines removed and program headings rewritten. Next.js configuration and ordinary tooling were retained because they do not impose a visual language.
 
-- 5,597 activities and 259,452 duplicated contacts belong to 2019, not 2026. The redesign labels both year and counting method.
-- 44,000 annual people and 91 cents per dollar lack a reliable reporting period; neither is used as a current headline.
-- Tobacco totals differ between Results and the dedicated policy page; newer dedicated figures are discussed with explicit undated context, not used as current hero statistics.
-- President’s Service Award: Awards page and photo indicate November 1998, while Emerging Leaders says 1999. The history route explains the discrepancy.
-- Golf page contains residual 2025 image/sponsor labels. The dated 2026 PDF controls event date, venue and schedule; no sponsors are relabeled as 2026.
-- Board page was last modified May 2025. Full roster preserved as published, with source context; outside professional affiliations not independently reverified.
-- Current public program descriptions are not proof of present enrollment availability. Calls to action connect people with the organization for specifics.
+## Creative divergence
 
-See [FACTS.md](research/FACTS.md) and [DECISIONS.md](research/DECISIONS.md).
+Three internally developed directions:
 
-## Information architecture and pages built
+1. **Signal / Response** — crimson/black civic broadcasting, waveform transitions, program tuning. Rejected: it emphasizes speaking at people rather than the patient work of mentoring.
+2. **The Living Commons** — procedural community garden, branching infrastructure, exploratory map. Rejected: too close to the prior connection-system metaphor, with unnecessary navigation complexity.
+3. **Room to Become** — dimensional apertures, spaces opening around real people, an expanding program gallery. Selected: it makes the organization's combination of personal support and healthier environments tangible without inventing data.
 
-Four primary navigation paths: **Our work / Our impact / Our story / Get involved**, plus persistent Donate. Resources, contact, leadership, history and event routes remain one step away through relevant sections and the footer.
+Full decision record: `research/CREATIVE_DIVERGENCE.md`.
 
-18 complete content pages:
+**Big Idea:** People will remember America On Track because its website makes room for the potential already inside people—opening spaces for mentoring, leadership, learning, and healthier living.
 
-1. Home `/`
-2. Programs `/programs`
-3. Emerging Leaders `/programs/emerging-leaders`
-4. Brighter Futures `/programs/brighter-futures`
-5. Fitness `/programs/fitness`
-6. Nutrition `/programs/nutrition`
-7. Drug-Use Prevention `/programs/drug-use-prevention`
-8. Tobacco-Free Communities `/programs/tobacco-free-communities`
-9. About `/about`
-10. Leadership & all three boards `/about/leadership`
-11. History & recognition `/about/history`
-12. Impact `/impact`
-13. Get involved `/get-involved`
-14. Donate `/donate`
-15. Kids On Track Golf `/events/golf`
-16. Contact `/contact`
-17. Resources `/resources`
-18. Privacy & preview information `/privacy`
+Modern-web research covered Dia's layered art/program architecture, Linear's controlled system presentation, Cooper Hewitt's participatory collection model, and dimensional experiences in Awwwards' 3D gallery. Techniques informed the solution space; no site's design or code was copied. A failed Pentagram fetch was not counted as research.
 
-Plus custom 404, favicon and robots route.
+## New visual language
 
-## Big Idea and creative rationale
+- Architecture rather than editorial stripes: rounded openings, dimensional frames, an environmental perspective floor, and photographic spaces.
+- **Typography:** locally served DM Sans Variable and Instrument Serif italic. Wide, restrained sans-serif proportions pair with expressive human-scale italics. Licenses are included.
+- **Palette:** aubergine `#352044`, lilac `#ddccee`, lavender `#cbb0e6`, rose `#f0bfd0`, near-white `#f6f2f8`, and ink `#302039`. Dark event/impact fields provide deliberate changes of pace.
+- **Imagery:** authentic program, camp, founder, award, and event materials. Masks and crops change the framing; people and factual context are not altered. No generated or stock participants.
+- Proposed aperture wordmark and SVG favicon are original design elements. The architecture is metaphorical, not a claim that the organization owns these physical spaces.
 
-**A brighter future is a shared achievement.** People should remember how a connection with one young person reaches a family and a community. The mission’s three scales become the primary interactive story, the proposed three-bar brand mark, and the editorial progression through the site.
+## Advanced visual system and motion
 
-Strong, compressed uppercase typography gives the organization an active civic presence. Asymmetric opening composition, real photography, a folded image corner, and a yellow typographic stamp establish a distinctive invitation. Long copy becomes a deliberate rhythm of large statements, numbered program rows, concise explanations, dated ledgers, people lists, and optional depth.
+The hero is a CSS 3D photographic environment. “Open the space” parts the framing layers and brings learning and leadership photographs forward from behind the mentoring scene. Closing reunites the composition. The button communicates expanded state; concealed links are inert. A conventional program CTA is always present.
 
-Typography: locally hosted Barlow Condensed 800 and Manrope 400/700, with SIL license files retained. Palette: midnight navy #152e3d, warm paper #f5f3eb, yellow #f5d548, burnt orange #c74727, muted green #c8d9c0. Navy/gold retain recognizable source-brand equity. Orange supplies editorial emphasis; green connects health/community material.
+Perspective, `translateZ`, staggered rotations, shadows, layered masks, and gentle pointer-responsive rotation create depth. There is no WebGL requirement, animation library, continuous render loop, scroll hijacking, or randomly rotating object. Pointer movement performs bounded style updates only inside the scene. The opened mobile composition deliberately stacks the central scene above the smaller side spaces so their labels stay readable.
 
-## Assets
+The signature program gallery makes six areas of work into expandable rooms. Selecting a room reallocates width on desktop and opens a vertical panel on mobile. Each exposes the program name, format, audience, image, and detail link. Audience filters give a direct alternative route into the information. Interaction is explicit click/tap, with native button keyboard behavior and stable focus.
 
-13 first-party images/artwork used, including program and scholarship photographs, camp group, founders, mentor activity, nutrition team, physical activity cutout, community park, archival award photo and original golf artwork. No invented participants, stock substitutions or AI portraits. Full native dimensions, source URL, purpose and limitations: [ASSETS.md](research/ASSETS.md).
+Motion uses opening, parting, unfolding, and settling. Archive folios use optional CSS scroll-driven perspective transforms. Text is never withheld behind fade-in effects. Reduced motion disables transforms/animation transitions that depend on movement while retaining all content, states, and destinations. Unsupported scroll timelines simply show static folios.
 
-Original CSS/SVG design: proposed wordmark, favicon, connection diagram and directional details. Source photos remain factually unaltered; responsive crops and optimization only. Public permission to reuse images is not established merely by public availability; confirm organization consent before a public launch.
+## Information architecture and pages
 
-## Signature interaction and motion
+Four main navigation paths: Programs, Our story, Impact, Get involved. Give remains prominent. The expanded menu and footer expose deeper destinations without a long top navigation. Summaries lead to proof, optional details, and real next actions.
 
-The connection explorer changes from **Young people → Families → Communities**. Each choice changes the central proposition (A voice / A circle / A future), explanatory copy, actual relevant program destinations, supporting photograph and expanding network. The network is explicitly illustrative rather than a numerical claim. It gives visitors a functional way to understand and navigate the mission.
+18 rebuilt pages:
 
-Keyboard-operable tablist with arrows, Home and End; normal links remain available. Brief horizontal movement supports content changes, while text stays at full opacity for contrast throughout. Network connections and nodes transition to show widening relationships. Utility link arrows, image hover, menu feedback, and one-time stamp motion support the system. Reduced motion disables all animation and transitions without removing content or controls. No animation package or scroll hijacking.
+- Home `/`
+- Program index `/programs`
+- Emerging Leaders `/programs/emerging-leaders`
+- Brighter Futures `/programs/brighter-futures`
+- Fitness `/programs/fitness`
+- Nutrition `/programs/nutrition`
+- Drug prevention `/programs/drug-use-prevention`
+- Tobacco-free communities `/programs/tobacco-free-communities`
+- About `/about`
+- Leadership and all boards `/about/leadership`
+- History and awards `/about/history`
+- Impact `/impact`
+- Get involved `/get-involved`
+- Donate `/donate`
+- Kids On Track Golf `/events/golf`
+- Contact `/contact`
+- Resources `/resources`
+- Privacy and site information `/privacy`
 
-## Content simplification
+Plus custom 404, icon and robots routes. Program details answer who, what, how, and next; native disclosures preserve deeper information. Tobacco education, youth access, and policy work remain distinct within one clear program page. Leadership preserves all 10 Directors, four Honorary members and four Advisory members. History uses archive folios and recognition context rather than a dot-line timeline.
 
-- Three overlapping tobacco pages consolidated into one program with distinct education, merchant and policy strands.
-- Programs consistently answer what / who / format / what happens / next step without flattening their differences into a card grid.
-- Full leadership and all three boards preserved in readable lists; longer bios progressively disclosed.
-- Historical results converted to a dated ledger with plain-language counting definitions.
-- Recognition curated into a timeline, with direct access to the full original archive.
-- Sensitive trauma narratives omitted in favor of respectful summaries and a short exact testimonial excerpt.
-- Separate volunteer pathways replace duplicated generic forms.
-- Resource directory surfaces existing official forms, documents and original archives.
-- No donation amount claims, fake payment widgets, fabricated testimonials or invented impact figures.
+## Browser review and revisions
 
-## Responsive strategy and meaningful revisions
+1. **Initial visual system:** inspected desktop/mobile full-page composition. Confirmed substantial distance from the retired layout and type system. Judged the first depth treatment too restrained.
+2. **Advanced experience:** removed the initial three-state hero selector; prototyped and inspected the parting-frame photographic environment. Revised mobile depth to prevent side labels being obscured.
+3. **Whole-site coherence:** inspected internal pages at the required sizes: program details, archive, leadership, giving, impact, contact, and event. Kept different compositions within the aperture vocabulary. Changed gallery behavior from hover/focus activation to explicit toggles.
+4. **Final polish:** corrected muted-text contrast and a decorative floor intercepting clicks. Removed a QA image-attribute mutation that caused test-induced hydration warnings. Strengthened modal keyboard cycling and no-JavaScript navigation/gallery presentation. Visually caught and fixed clipped static-gallery content, then added explicit content-width assertions. Formatted the source and removed unused prototype styles.
 
-Desktop: large asymmetric hero, spacious editorial columns, complete photo-plus-network explorer.
-Tablet: tighter typography and spacing; network integrates with the image to retain the narrative at 1024px.
-Mobile: deliberately reordered single-column hero, full-screen scrolling navigation, photo below the program explanation, network as its own horizontal block, stacked data and leadership lists. Tested at 390×844 and menu at 390×600.
+Screenshots and machine-readable results are in `qa/rebuild/`. Detailed review record: `research/CREATIVE_REVIEWS.md`.
 
-Revision passes:
-1. Initial rendered desktop/mobile review: refined stamp spacing and folded-corner graphic.
-2. Strengthened the explorer from simple tabs to a content-linked animated connection network; retained mobile composition.
-3. Replaced a dense nutrition text graphic with first-party team photography and corrected its alt text.
-4. Full production scan identified long Golf and Privacy headings overflowing at 390px. Adjusted mobile heading scale; final scan has zero overflow.
-5. Removed opacity changes during text entrances so transitional text retains full contrast.
-6. Ensured screenshots wait for image decoding; early blank areas were lazy-loading capture timing, not accepted final output.
+## Similarity audit
 
-## Accessibility and browser QA
+Direct visual comparison with `qa/previous/home-1440.png` confirms a different composition, palette, typographic personality, spatial rhythm, image framing, program navigation, and motion vocabulary. The old condensed headline, left/right hero, folded corner, stamp, numbered rows, and three-scale network do not survive. This implementation cannot be obtained through a recolor of the retired CSS. Authentic photographs intentionally overlap because they are the client's legitimate materials.
 
-Automated axe-core checks for WCAG 2 A/AA and 2.1 AA across 18 pages × 3 widths (1440, 1024, 390): **54 checks, zero final violations**. No broken images, unexpected status codes, horizontal overflow, missing/duplicate H1s or captured runtime errors. This is evidence of testing, not a claim of formal WCAG certification.
+**Result:** passes comparison with the retired America On Track build and the requested anti-reference. Other unspecified recent projects were not supplied as comparison references; no claim is made to have inspected them.
 
-Manual visual inspection: Home, program detail, About, leadership, Get Involved and Donate at all three required widths, full-page composition reviews, Golf mobile fix, mobile menu and signature explorer at all widths. Screenshots in `qa/`.
+## Accessibility and responsive strategy
 
-Interaction checks: explorer content changes; arrow-key navigation; mobile menu open/Escape/focus return and route navigation; family audience filter; program disclosures; reduced motion; scrolling short-height menu; no-JavaScript essential homepage and all six program links; visible skip-link focus. Real semantic headings, meaningful alt text, contact tel/mail links, native disclosures and visible focus are implemented.
+Semantic server-rendered content, one H1 per page, meaningful image alternatives, visible keyboard focus, skip link, native disclosures, labeled controls, state semantics, normal anchor destinations, and a modal menu with Escape/focus return/cycling. No synthetic form-success states or payment collection.
 
-Functional link validation: all internal links respond successfully. All **24 checked external organizational/form/PDF destinations returned HTTP 200**, including nine official Wufoo forms. Two Google Maps search URLs are correctly constructed, but excluded from the automated external checker. No donations, applications or messages were submitted.
+Desktop uses a wide dimensional scene and horizontally expanding rooms. Tablet reduces scene scale while preserving the spatial experience. Mobile gets stacked typography, a compact depth composition, vertically opening rooms, simplified archive columns, and a scrollable menu. No-JavaScript visitors receive direct navigation and all program links, with the gallery expanded into a static grid. Reduced-motion visitors retain the whole experience.
 
-## Performance and engineering validation
+Main suite: 18 pages × 1440 / 1024 / 390px = **54 passing checks**, zero axe WCAG A/AA violations, zero horizontal overflow, no broken visible images, one H1 each, successful internal links, and no runtime/console errors. A 390×600 short-height menu is checked. Additional expanded-state and focus tests are recorded at closeout. Automated checks are not formal WCAG certification.
+
+## Engineering and performance
 
 - Clean `npm ci --no-audit`: passed.
-- ESLint: passed.
-- TypeScript: passed.
-- Production build: passed; content statically generated.
-- Final production responsive/accessibility/interaction suite: passed.
-- Browser console/error inspection: no reported errors.
-- Runtime dependency audit: zero vulnerabilities.
-- Full development audit: five high-severity entries trace to one unpatched `braces` stack-exhaustion advisory (GHSA-vfj7-8cjw-p6xm) through `micromatch → fast-glob → @next/eslint-plugin-next → eslint-config-next`. Latest braces was 3.0.3 at check time. This is lint-time tooling, not shipped browser/server runtime. Downgrading to incompatible Next 14 lint configuration was rejected. Exact reports are saved in `qa/dependency-audit.json` and `qa/runtime-audit.json`.
-- Earlier sharp issue fixed by updating to 0.35.5.
-- Local production browser observation: navigation ~192 ms, LCP ~164 ms, ~511 KB transferred over 28 resource requests. These are local, unthrottled observations—not a Lighthouse score or field performance guarantee.
+- ESLint, TypeScript, production build: passed.
+- All content routes statically generated.
+- Production runtime audit: **zero vulnerabilities**.
+- Full audit: **five high-severity entries** in the lint-only `braces → micromatch → fast-glob → @next/eslint-plugin-next → eslint-config-next` chain. npm's proposed fix is an incompatible downgrade to Next 14 lint configuration; not applied. These are not shipped application dependencies. Exact audit reports are retained.
+- Local Chromium observations: ~368 KB transferred on desktop, ~330 KB on mobile; ~165 KB script transfer. Observed LCP 48 ms / 128 ms and CLS ~0.016 / ~0.007. These unthrottled local measurements are not field results or a Lighthouse score.
+- First-party original images total about 2.1 MB on disk; responsive Next Image derivatives are served to visitors. Fonts are bundled locally. No third-party analytics or WebGL engine.
 
 ## Known limitations
 
-- Public-site research cannot confirm present program capacity, every board member’s outside employment, current grant status, or financial reporting periods. Uncertainty is preserved rather than invented away.
-- Official third-party forms load and are linked accurately; completed submissions/payment processing are intentionally not exercised.
-- This is a presentation proposal, not an officially approved replacement; source imagery and proposed branding need client review before public use.
-- Five development-tool audit entries remain for one unpatched underlying advisory; runtime audit is clean.
-- Browser verification used isolated Chromium, not physical-device Safari/Firefox or a formal assistive-technology certification suite.
-- No deployment, domain configuration, CMS or public sitemap is introduced. Local noindex configuration is intentional.
+- Source dates establish publication, not current program capacity, current grant awards, or board members' independently verified outside employment.
+- Photographs include historical materials of varying native quality; no current-participant claim is made. Public launch would require client authorization and confirmation of image permissions.
+- Official forms were verified as linked and reachable; donations, registrations, and applications were not submitted.
+- Browser evidence is Chromium desktop/device emulation, not physical-device Safari/Firefox or an assistive-technology certification audit.
+- The five lint-tool audit entries remain. Runtime dependencies are clean.
+- This is a local presentation proposal with no CMS/backend; noindex and robots-disallow are intentional. No public deploy or push was performed.
 
-## Handoff files
+## Final closeout
 
-`research/SOURCES.md`, `FACTS.md`, `CONTENT_AUDIT.md`, `DECISIONS.md`, `ASSETS.md`; source snapshots; `README.md`; `qa/report.json`, `qa/external-links.json`, audit reports and screenshots. Run instructions and content locations are in README.
+Completed October 7, 2026, approximately **08:10 UTC (1:10 AM Pacific)**. Approximately **48 minutes** of continuous active work-session time, including tool execution and verification.
+
+The final production regression suite passed **54/54** page-and-width checks with **zero violations, zero overflow, zero runtime/console errors**, and all interaction assertions passing. Six additional axe scans of the opened aperture and modal menu across 1440/1024/390 also passed. Full audience-filter checks, all six program openings, 22-step modal keyboard cycling, and desktop/mobile no-JavaScript gallery checks passed. Final static-gallery screenshots were visually inspected; settled program panels were captured and measured with no internal content clipping. The final build and lint/type checks passed, and `git diff --check` is clean.
+
+The website remains running as a **production server bound to 127.0.0.1:3017**. No deployment or push occurred.

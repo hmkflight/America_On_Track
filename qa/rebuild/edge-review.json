@@ -1,0 +1,62 @@
+[
+  {
+    "width": 1440,
+    "state": "open aperture",
+    "overflow": false,
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "state": "modal navigation",
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "state": "all audience filters and six programs",
+    "passed": true
+  },
+  {
+    "width": 1024,
+    "state": "open aperture",
+    "overflow": false,
+    "violations": []
+  },
+  {
+    "width": 1024,
+    "state": "modal navigation",
+    "violations": []
+  },
+  {
+    "width": 1024,
+    "state": "all audience filters and six programs",
+    "passed": true
+  },
+  {
+    "width": 390,
+    "state": "open aperture",
+    "overflow": false,
+    "violations": []
+  },
+  {
+    "width": 390,
+    "state": "modal navigation",
+    "violations": []
+  },
+  {
+    "width": 390,
+    "state": "all audience filters and six programs",
+    "passed": true
+  },
+  {
+    "width": 1440,
+    "state": "no JS",
+    "links": 6,
+    "overflow": false
+  },
+  {
+    "width": 390,
+    "state": "no JS",
+    "links": 6,
+    "overflow": false
+  }
+]

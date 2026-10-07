@@ -1,5 +1,85 @@
-import type { Metadata } from 'next';
-import { PageHero, Photo, Eyebrow, Button, TextLink } from '@/components/ui';
-import { links } from '@/lib/content';
-export const metadata:Metadata={title:'Give a brighter future',description:'Support America On Track’s leadership, mentoring, and community programs through the organization’s official donation form.'};
-export default function Donate(){return <><PageHero label="Make possibility possible" title={<>A gift today.<br/><em>A door opened tomorrow.</em></>} description="Help America On Track build youth leaders, support families, and strengthen communities through life-transforming programs."/><section className="wrap donate-layout"><div className="donate-panel"><Eyebrow>Invest in brighter futures</Eyebrow><h2>Your support<br/>belongs here.</h2><p>Make a gift through America On Track’s official donation form. Choose your contribution there and complete your donation directly with the organization.</p><Button href={links.donate}>Continue to official giving form</Button><small>You’ll leave this preview for America On Track’s Wufoo form. No payment information is collected on this site.</small></div><div className="donate-why"><Photo src="brighter.jpg" alt="A young participant exploring a STEM activity"/><h2>What your support makes possible.</h2><ul><li>Leadership and civic engagement opportunities</li><li>Mentoring and support for children and families</li><li>Learning, healthy habits, and community connection</li></ul><p>America On Track is a 501(c)(3) nonprofit organization.<br/>Federal tax ID: 33-0724044.</p><TextLink href="/impact">Explore documented impact</TextLink></div></section><section className="detail-band"><div className="wrap details-layout"><h2>More ways<br/>to support the work.</h2><div className="accordion"><details open><summary>Give by mail</summary><p>Contact the team to arrange a mailed gift, or send correspondence to America On Track, 600 W. Santa Ana Blvd., Suite 710, Santa Ana, CA 92701. Call <a href="tel:+17145317144">714-531-7144</a> with giving questions.</p></details><details><summary>Become an event sponsor</summary><p>Support the Kids On Track Golf Tournament through event sponsorship, a tee sign, an auction item, or participation. <a className="text-link" href="/events/golf">Explore the tournament ↗</a></p></details><details><summary>Ask about institutional giving</summary><p>For corporate partnerships, foundation inquiries, or current financial and program documents, email <a href={links.email}>PR@AmericaOnTrack.org</a>.</p></details></div></div></section></>}
+import { Intro, Photo, Action, Source } from "@/components/elements";
+import { links } from "@/lib/content";
+export const metadata = { title: "Give" };
+export default function Donate() {
+  return (
+    <>
+      <Intro
+        eyebrow="Give to America On Track"
+        title="Make possibility"
+        accent="possible."
+      >
+        <p>
+          Your support helps sustain mentoring, youth leadership, and healthier
+          communities across Orange County.
+        </p>
+      </Intro>
+      <section className="giving wrap">
+        <Photo
+          name="brighter.jpg"
+          alt="A Brighter Futures participant showing a hands-on STEM project"
+          priority
+        />
+        <div className="giving-panel">
+          <p className="eyebrow">Invest in what can be</p>
+          <h2>
+            A gift that
+            <br />
+            <em>opens doors.</em>
+          </h2>
+          <p>
+            Support the programs and relationships that help children and
+            families build brighter futures.
+          </p>
+          <Action href={links.donate}>Continue to the donation form</Action>
+          <p className="fine">
+            You’ll continue to America On Track’s official donation form.
+            Payment details are entered there.
+          </p>
+          <Source path="donate">Other ways to support the organization</Source>
+        </div>
+      </section>
+      <section className="wrap content-section">
+        <div className="section-lead">
+          <h2>
+            Give with
+            <br />
+            <em>understanding.</em>
+          </h2>
+          <p>
+            America On Track is an independent 501(c)(3) nonprofit. EIN:
+            33-0724044.
+          </p>
+        </div>
+        <div className="disclosures">
+          <details>
+            <summary>Giving by mail</summary>
+            <p>
+              Contact America On Track to confirm your gift arrangements. The
+              published office address is 600 W. Santa Ana Blvd., Suite 710,
+              Santa Ana, CA 92701.
+            </p>
+          </details>
+          <details>
+            <summary>Corporate support and event sponsorship</summary>
+            <p>
+              Explore Kids On Track Golf sponsorships or contact the
+              organization to discuss a partnership that fits your goals.
+            </p>
+            <a className="source" href="/events/golf">
+              Golf sponsorship opportunities ↗
+            </a>
+          </details>
+          <details>
+            <summary>Questions about your donation</summary>
+            <p>
+              Call <a href="tel:+17145317144">714-531-7144</a> or email{" "}
+              <a href={links.email}>PR@AmericaOnTrack.org</a>. The team can
+              assist with gift arrangements and documentation.
+            </p>
+          </details>
+        </div>
+      </section>
+    </>
+  );
+}

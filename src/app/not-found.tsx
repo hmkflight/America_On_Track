@@ -1,2 +1,14 @@
-import { Button, Eyebrow } from '@/components/ui';
-export default function NotFound(){return <section className="wrap not-found"><Eyebrow>404 / Let’s reconnect</Eyebrow><h1>A different<br/>way forward.</h1><p>We couldn’t find that page. Explore our programs or return to the homepage.</p><Button href="/programs">Explore our programs</Button></section>}
+import { Intro, Action } from "@/components/elements";
+export default function NotFound() {
+  return (
+    <div className="wrap missing">
+      <Intro
+        eyebrow="404 · A different door"
+        title="Let’s find"
+        accent="your place."
+      />
+      <p>This page isn’t here. There’s plenty more to explore.</p>
+      <Action href="/programs">Explore our programs</Action>
+    </div>
+  );
+}

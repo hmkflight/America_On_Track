@@ -1,5 +1,7 @@
 # Sources used
 
+**Fresh verification on October 7, 2026:** All 21 first-party pages were downloaded again and compared to these earlier captures. See [FRESH_RESEARCH.md](FRESH_RESEARCH.md), `raw/pages-2026-10-07.json`, and `raw/fresh-*.txt`. All nine official forms were matched to freshly retrieved source links and checked successfully.
+
 Research date: October 2, 2026. Primary domain verified by direct HTTP 200, public WordPress API, consistent organizational identity/contact details, and first-party sitemap.
 
 ## First-party pages

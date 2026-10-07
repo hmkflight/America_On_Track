@@ -20,7 +20,8 @@ All photography and event artwork below were downloaded from America On Track’
 
 ## Other assets
 
-- Barlow Condensed 800 and Manrope 400/700 downloaded from fonts.gstatic.com (exact source URLs in research/raw/fonts.css). Original SIL Open Font License files included in public/fonts.
-- Brand bars, favicon, connection network and directional marks: original SVG/CSS design for this proposal. Network dots are illustrative and labeled; not quantitative data.
+- Retired fonts: Barlow Condensed and Manrope are no longer included in production. Their original download evidence remains in research/raw/fonts.css.
+- New fonts: DM Sans Variable (@fontsource-variable/dm-sans 5.3.0) and Instrument Serif italic (@fontsource/instrument-serif 5.3.0), locally bundled through npm. SIL Open Font Licenses copied to public/fonts/DM-Sans-LICENSE.txt and Instrument-Serif-LICENSE.txt.
+- New aperture wordmark, favicon, dimensional photo frames, program-room glyphs and archive folios: original SVG/CSS compositions for this rebuild. Architectural forms are a visual metaphor, not a model of a physical America On Track facility. Retired brand bars and connection network have been removed.
 - Downloaded but rejected: HighFiveBlack nutrition graphic (text too dense) and original globe mark (not used in evolved wordmark). Preserved under research/raw/unused-assets for provenance.
 - Next Image generates responsive WebP/AVIF derivatives locally; descriptive alt text supplied; original photos never edited to alter their factual content.

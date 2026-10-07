@@ -1,0 +1,534 @@
+{
+  "time": "2026-10-07T08:05:46.069Z",
+  "base": "http://127.0.0.1:3017",
+  "routes": [
+    {
+      "width": 1440,
+      "route": "/",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/programs",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/programs/emerging-leaders",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/programs/brighter-futures",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/programs/fitness",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/programs/nutrition",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/programs/drug-use-prevention",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/programs/tobacco-free-communities",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/about",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/about/leadership",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/about/history",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/impact",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/get-involved",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/donate",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/events/golf",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/contact",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/resources",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1440,
+      "route": "/privacy",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "route": "/",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "route": "/programs",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "route": "/programs/emerging-leaders",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "route": "/programs/brighter-futures",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "route": "/programs/fitness",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "route": "/programs/nutrition",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "route": "/programs/drug-use-prevention",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "route": "/programs/tobacco-free-communities",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "route": "/about",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "route": "/about/leadership",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "route": "/about/history",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "route": "/impact",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "route": "/get-involved",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "route": "/donate",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "route": "/events/golf",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "route": "/contact",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "route": "/resources",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 1024,
+      "route": "/privacy",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/programs",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/programs/emerging-leaders",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/programs/brighter-futures",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/programs/fitness",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/programs/nutrition",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/programs/drug-use-prevention",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/programs/tobacco-free-communities",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/about",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/about/leadership",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/about/history",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/impact",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/get-involved",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/donate",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/events/golf",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/contact",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/resources",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    },
+    {
+      "width": 390,
+      "route": "/privacy",
+      "status": 200,
+      "h1": 1,
+      "overflow": false,
+      "brokenImages": [],
+      "violations": []
+    }
+  ],
+  "errors": [],
+  "interactions": [
+    "Dimensional aperture opens to reveal photographic learning and leadership spaces",
+    "Native modal menu opens, Escape closes, trigger focus restored",
+    "Program filter and expanding rooms work on mobile",
+    "Program detail disclosure opens",
+    "Reduced motion disables transitions while retaining scene changes and links",
+    "390 × 600 menu scrolls to the final link",
+    "No-JS home and all six program detail links available"
+  ],
+  "externalLinks": [
+    "https://americaontrack.wufoo.com/forms/r1qw0owl0zsn6ym",
+    "https://americaontrack.wufoo.com/forms/m1uaxyu10hwmilf/",
+    "https://americaontrack.org/emerging-leaders-for-civic-engagement-program/",
+    "https://americaontrack.org/brighter-futures-for-children-of-prisoners/",
+    "https://americaontrack.org/fitness/",
+    "https://americaontrack.org/nutrition/",
+    "https://americaontrack.org/drug-use-prevention-education/",
+    "https://americaontrack.org/tobacco-policies-protect-our-communities/",
+    "https://americaontrack.org/our-story/",
+    "https://americaontrack.org/terry-thompson/",
+    "https://americaontrack.org/claire-braeburn/",
+    "https://americaontrack.org/board-of-directors/",
+    "https://americaontrack.org/awards/",
+    "https://americaontrack.org/results/",
+    "https://americaontrack.wufoo.com/forms/rf5ekag09zzgxe/",
+    "https://americaontrack.wufoo.com/forms/m1jzfup1vg14w4/",
+    "https://americaontrack.org/volunteer/",
+    "https://americaontrack.wufoo.com/forms/m1w310g302w124e",
+    "https://americaontrack.org/donate/",
+    "https://americaontrack.wufoo.com/forms/kids-on-track-golf-tournament-registration/",
+    "https://americaontrack.org/wp-content/uploads/2026/03/Schedule-Location-of-The-Huntington-Club-2026.pdf",
+    "https://americaontrack.wufoo.com/forms/kids-on-track-golf-sponsorship-form/",
+    "https://americaontrack.wufoo.com/forms/kids-on-track-golf-awards-dinner-registration/",
+    "https://americaontrack.wufoo.com/forms/kids-on-track-golf-tournament-donation-form/",
+    "https://americaontrack.org/golf-tournament/",
+    "https://www.google.com/maps/search/?api=1&query=600+W+Santa+Ana+Blvd+Suite+710+Santa+Ana+CA+92701",
+    "https://americaontrack.org/tobacco-vape-use-prevention/",
+    "https://americaontrack.org/lowering-youth-access-to-tobacco/",
+    "https://americaontrack.org/privacy-policy/",
+    "https://americaontrack.org/sms-disclosure/"
+  ]
+}

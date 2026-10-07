@@ -1,5 +1,79 @@
-import type { Metadata } from 'next';
-import { PageHero, Photo, Eyebrow, Button, TextLink, Closing } from '@/components/ui';
-import { links } from '@/lib/content';
-export const metadata:Metadata={title:'Get involved',description:'Become an adult mentor, join Emerging Leaders, volunteer, or support America On Track’s youth and community programs.'};
-export default function Involved(){return <><PageHero label="Get involved" title={<>You could be<br/><em>someone’s turning point.</em></>} description="Your time, experience, and encouragement can open a door. Find the way to contribute that feels right for you."/><section className="action-list wrap"><article className="action-row" id="mentor"><Photo src="mentor.jpg" alt="An adult mentor with a young participant at an America On Track event"/><div><Eyebrow>01 / Share your experience</Eyebrow><h2>Become an adult mentor.</h2><p>Be a positive role model through Brighter Futures. Start with the official interest form, then connect with the team about qualifications, training, and expectations.</p><Button href={links.mentor}>Adult mentor interest form</Button><TextLink href="/programs/brighter-futures">About Brighter Futures</TextLink></div></article><article className="action-row"><Photo src="stem.jpg" alt="Emerging Leaders working together on a STEM project"/><div><Eyebrow>02 / Find your voice</Eyebrow><h2>Become an Emerging Leader.</h2><p>For teens ready to build leadership skills and contribute to their community. The broader program serves grades 4–12; parents of younger students can contact the team to explore participation.</p><Button href={links.teen}>Teen Emerging Leader form</Button><TextLink href="/programs/emerging-leaders">Explore the program</TextLink></div></article><article className="action-row"><Photo src="camp.jpg" alt="America On Track volunteers and participants at a camp event"/><div><Eyebrow>03 / Bring what makes you, you</Eyebrow><h2>Volunteer your time & talents.</h2><p>Tell the team about your interests and skills. America On Track can help you discover current volunteer opportunities that support its programs and community.</p><Button href={links.volunteer}>General volunteer interest form</Button><TextLink href="/contact">Have a question?</TextLink></div></article></section><section className="detail-band"><div className="wrap details-layout"><h2>Another way<br/>to make a difference.</h2><div className="accordion"><details open><summary>Schools and community partners</summary><p>Explore fitness, nutrition, prevention education, and community health partnerships. <a className="text-link" href="/contact">Start a conversation ↗</a></p></details><details><summary>Donors and sponsors</summary><p>Support the work through a donation or get involved with the Kids On Track Golf Tournament. <a className="text-link" href="/donate">Ways to give ↗</a></p></details><details><summary>What happens when I open an interest form?</summary><p>You’ll continue to America On Track’s official form, hosted on Wufoo. Your information goes directly to the organization. This proposal website does not collect applications or process donations.</p></details></div></div></section><Closing title="Not sure where to start?" text="Tell us what you care about. We’ll help you find your connection." href="/contact" cta="Connect with our team"/></>}
+import { Intro, Action, Photo, Source } from "@/components/elements";
+import { links } from "@/lib/content";
+export const metadata = { title: "Get involved" };
+const ways = [
+  [
+    "Become a mentor",
+    "Be a steady, encouraging presence for a child. Start with the adult mentor interest form; the team will explain qualifications, training, and commitments.",
+    "Adult mentor interest",
+    links.mentor,
+  ],
+  [
+    "Lead as a teen",
+    "Build your own leadership skills while contributing to your community. Explore Emerging Leaders and share your interest.",
+    "Teen interest form",
+    links.teen,
+  ],
+  [
+    "Lend your time",
+    "Support activities, events, and practical work with America On Track. Share your interests and ask about current volunteer opportunities.",
+    "Volunteer interest",
+    links.volunteer,
+  ],
+  [
+    "Bring us together",
+    "Schools, businesses, and community organizations can help create more opportunities. Start a conversation about a partnership.",
+    "Talk about a partnership",
+    links.email,
+  ],
+];
+export default function Involved() {
+  return (
+    <>
+      <Intro
+        eyebrow="Get involved"
+        title="You have something"
+        accent="to give."
+      >
+        <p>
+          Time. Experience. Encouragement. There are many ways to make room for
+          someone else’s possibilities.
+        </p>
+      </Intro>
+      <section className="wrap pathways" aria-label="Ways to participate">
+        {ways.map(([title, text, cta, href]) => (
+          <article className="pathway" key={title}>
+            <div>
+              <h2>{title}</h2>
+              <p>{text}</p>
+            </div>
+            <Action href={href}>{cta}</Action>
+          </article>
+        ))}
+      </section>
+      <section className="community-band">
+        <Photo
+          name="mentor.jpg"
+          alt="An adult mentor and young participant at an America On Track event"
+        />
+        <div>
+          <p className="eyebrow">A relationship can open a world</p>
+          <h2>
+            Showing up
+            <br />
+            <em>is a beginning.</em>
+          </h2>
+          <p>
+            The first step is a conversation. America On Track will help you
+            understand where your time and experience can make a difference.
+          </p>
+          <Action href="/programs/brighter-futures" light>
+            Meet Brighter Futures
+          </Action>
+          <br />
+          <Source path="volunteer">Official volunteer information</Source>
+        </div>
+      </section>
+    </>
+  );
+}

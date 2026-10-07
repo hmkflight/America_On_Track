@@ -1,5 +1,116 @@
-import type { Metadata } from 'next';
-import { PageHero, Photo, Eyebrow, SourceNote, Closing } from '@/components/ui';
-import { board, honorary, advisory } from '@/lib/content';
-export const metadata:Metadata={title:'Leadership & boards',description:'Meet America On Track co-founders Terry Thompson and Claire Braeburn, the Board of Directors, Honorary Board, and Advisory Board.'};
-export default function Leadership(){return <><PageHero label="Our people" title={<>A shared purpose.<br/><em>People who show up.</em></>} description="From hands-on program leadership to the support of our boards, America On Track is built on people who believe in brighter futures."/><section className="wrap founder-section"><article className="founder"><Photo src="terry.jpg" alt="Terry Thompson, President and Co-Founder of America On Track"/><div><Eyebrow>President & Co-Founder</Eyebrow><h2>Terry Thompson</h2><p>Terry brings a belief in holistic leadership to America On Track: teamwork, diversity, innovation, and the determination to turn a vision into action. She leads and develops programs alongside co-founder Claire Braeburn.</p><p>Her path through literature, financial planning, and community research helped shape an organization rooted in compassion and practical action.</p><details><summary>More about Terry’s background</summary><p>Terry graduated magna cum laude from Cal State Long Beach with a BA in literature and later earned a Certified Financial Planner designation through USC. Her lifelong interest in social justice inspired the research that led to America On Track in 1995.</p><a className="text-link" href="https://americaontrack.org/terry-thompson/">Read the original biography ↗</a></details></div></article><article className="founder"><Photo src="claire.jpg" alt="Claire Braeburn, Executive Director and Co-Founder of America On Track"/><div><Eyebrow>Executive Director & Co-Founder</Eyebrow><h2>Claire Braeburn</h2><p>Claire helped launch America On Track with a background in technology, public speaking, marketing, and volunteer service. Her work combines organizational leadership with long-standing community involvement.</p><p>A UCLA graduate, Claire has worked across youth development, violence prevention, mentoring, and tobacco prevention coalitions.</p><details><summary>More about Claire’s background</summary><p>In 1997, Claire was appointed to a 14-month term on the California Attorney General’s Youth Council on Violence Prevention. She earned a certification in Financial Planning and Management for Nonprofit Organizations from CSUF in 2000 and served two consecutive terms as chair of the local tobacco prevention coalition after her election in 2011.</p><a className="text-link" href="https://americaontrack.org/claire-braeburn/">Read the original biography ↗</a></details></div></article></section><section className="board-section"><div className="wrap"><h2>Board of Directors</h2><p className="board-note">Names and professional affiliations as published on America On Track’s dedicated Board page, reviewed October 2, 2026. That page was last updated in May 2025.</p><div className="board-grid">{board.map(([name,title,company])=><article className="board-person" key={name}><h3>{name}</h3><p>{title}<br/>{company}</p></article>)}</div></div></section><section className="wrap additional-boards">{[['Honorary Board',honorary],['Advisory Board',advisory]].map(([title,people])=><div key={title as string}><h2>{title as string}</h2>{(people as string[][]).map(([name,role])=><article key={name}><h3>{name}</h3><p>{role}</p></article>)}</div>)}</section><div className="wrap"><SourceNote slug="board-of-directors">Board affiliations are reproduced from the current published roster; external employment titles have not been independently re-verified.</SourceNote></div><Closing title="Good people. Meaningful possibilities."/></>}
+import { Intro, Photo, Source } from "@/components/elements";
+import { board, honorary, advisory } from "@/lib/content";
+export const metadata = { title: "People & boards" };
+export default function Leadership() {
+  return (
+    <>
+      <Intro
+        eyebrow="People & governance"
+        title="The work has"
+        accent="many hands."
+      >
+        <p>
+          Founders, board members, staff, and volunteers bring a shared
+          commitment—and different experience—to America On Track.
+        </p>
+      </Intro>
+      <section className="wrap founder-grid" aria-label="Founders">
+        <article className="founder">
+          <Photo
+            name="terry.jpg"
+            alt="Terry Thompson, President and Co-Founder"
+            priority
+          />
+          <div>
+            <h2>
+              Terry
+              <br />
+              <em>Thompson</em>
+            </h2>
+            <p className="eyebrow">President · Co-Founder</p>
+            <p>
+              Co-founded America On Track in 1995, bringing business experience
+              and leadership training to work with young people and families.
+            </p>
+            <Source path="terry-thompson">Terry’s full biography</Source>
+          </div>
+        </article>
+        <article className="founder">
+          <Photo
+            name="claire.jpg"
+            alt="Claire Braeburn, Executive Director and Co-Founder"
+            priority
+          />
+          <div>
+            <h2>
+              Claire
+              <br />
+              <em>Braeburn</em>
+            </h2>
+            <p className="eyebrow">Executive Director · Co-Founder</p>
+            <p>
+              Co-founded the organization and helped design its work in
+              mentoring, leadership, health education, and community prevention.
+            </p>
+            <Source path="claire-braeburn">Claire’s full biography</Source>
+          </div>
+        </article>
+      </section>
+      <section className="governance">
+        <div className="wrap">
+          <p className="eyebrow">The governance assembly</p>
+          <h2 style={{ marginTop: 20 }}>
+            Experience in service
+            <br />
+            <em>of possibility.</em>
+          </h2>
+          <nav className="board-tabs" aria-label="Board sections">
+            <a href="#directors">Board of Directors</a>
+            <a href="#honorary">Honorary Board</a>
+            <a href="#advisory">Advisory Board</a>
+          </nav>
+          <h2 id="directors" className="sr-only">
+            Board of Directors
+          </h2>
+          <div className="board-grid">
+            {board.map(([name, role, org]) => (
+              <article key={name} className="board-person">
+                <span className="initial" aria-hidden="true">
+                  {name
+                    .split(" ")
+                    .map((n) => n[0])
+                    .join("")}
+                </span>
+                <h3>{name}</h3>
+                <p>{role}</p>
+                <p>{org}</p>
+              </article>
+            ))}
+          </div>
+          <div className="board-secondary">
+            {[
+              ["Honorary Board", "honorary", honorary],
+              ["Advisory Board", "advisory", advisory],
+            ].map(([title, id, people]) => (
+              <section id={id as string} key={id as string}>
+                <h2>{title as string}</h2>
+                {(people as string[][]).map(([name, role]) => (
+                  <article className="board-person" key={name}>
+                    <h3>{name}</h3>
+                    <p>{role}</p>
+                  </article>
+                ))}
+              </section>
+            ))}
+          </div>
+          <p className="source-note">
+            Roster reproduced from America On Track’s published board page, last
+            modified May 22, 2025 and checked October 7, 2026. Professional
+            affiliations are listed as published.
+          </p>
+          <Source path="board-of-directors">Published board roster</Source>
+        </div>
+      </section>
+    </>
+  );
+}

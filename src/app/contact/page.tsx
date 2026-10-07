@@ -1,5 +1,60 @@
-import type { Metadata } from 'next';
-import { PageHero, TextLink } from '@/components/ui';
-import { links } from '@/lib/content';
-export const metadata:Metadata={title:'Contact',description:'Connect with America On Track in Santa Ana. Call 714-531-7144 or email PR@AmericaOnTrack.org for programs, volunteering, and partnerships.'};
-export default function Contact(){return <><PageHero label="Let’s connect" title={<>A conversation<br/><em>can start something.</em></>} description="Questions about programs, participation, partnerships, or giving? The America On Track team can help you find the right next step."/><section className="wrap contact-layout"><div><div className="contact-block"><h2>Say hello.</h2><a href={links.email}>PR@AmericaOnTrack.org</a><a href="tel:+17145317144">714-531-7144</a><p>Fax: 714-531-7773</p></div><div className="contact-block"><h2>Our office.</h2><address>America On Track<br/>600 W. Santa Ana Blvd., Suite 710<br/>Santa Ana, CA 92701</address><TextLink href="https://www.google.com/maps/search/?api=1&query=600+W+Santa+Ana+Blvd+Suite+710+Santa+Ana+CA+92701">View the location</TextLink><p style={{marginTop:18,fontSize:12}}>Please contact the team to arrange a visit.</p></div></div><aside className="contact-side"><h2>Know where<br/>you want to start?</h2><TextLink href={links.mentor}>Adult mentor interest</TextLink><TextLink href={links.teen}>Teen Emerging Leader interest</TextLink><TextLink href={links.volunteer}>General volunteer interest</TextLink><TextLink href={links.newsletter}>Join the organization’s email list</TextLink><p>These links open America On Track’s official forms. Applications and inquiries go directly to the organization.</p></aside></section></>}
+import { Intro } from "@/components/elements";
+import { links } from "@/lib/content";
+export const metadata = { title: "Contact" };
+export default function Contact() {
+  return (
+    <>
+      <Intro eyebrow="Contact us" title="A conversation" accent="opens things.">
+        <p>
+          Looking for a program, a partnership, or a way to help? Start here.
+          We’ll help you find your next step.
+        </p>
+      </Intro>
+      <section className="contact-layout wrap">
+        <div className="contact-panel">
+          <p className="eyebrow">America On Track</p>
+          <h2>We’re here.</h2>
+          <a href="tel:+17145317144">714 531 7144 ↗</a>
+          <a href={links.email}>PR@AmericaOnTrack.org ↗</a>
+          <address>
+            600 W. Santa Ana Blvd., Suite 710
+            <br />
+            Santa Ana, CA 92701
+          </address>
+          <a
+            className="source"
+            href="https://www.google.com/maps/search/?api=1&query=600+W+Santa+Ana+Blvd+Suite+710+Santa+Ana+CA+92701"
+            style={{ fontSize: 14 }}
+          >
+            Get directions ↗
+          </a>
+          <p className="source-note">
+            Fax: 714-531-7773
+            <br />
+            Contact the team before visiting.
+          </p>
+        </div>
+        <div className="contact-choices">
+          <h2>
+            What brings
+            <br />
+            <em>you here?</em>
+          </h2>
+          {[
+            ["Find a program", "/programs"],
+            ["Become an adult mentor", links.mentor],
+            ["Teen leadership interest", links.teen],
+            ["Volunteer", links.volunteer],
+            ["Giving questions", "/donate"],
+            ["Golf tournament", "/events/golf"],
+          ].map(([n, h]) => (
+            <a key={n} href={h}>
+              {n}
+              <span aria-hidden="true">↗</span>
+            </a>
+          ))}
+        </div>
+      </section>
+    </>
+  );
+}

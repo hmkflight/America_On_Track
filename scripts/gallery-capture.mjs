@@ -1,0 +1,3 @@
+import {chromium} from '@playwright/test';
+const browser=await chromium.launch({headless:true});const page=await browser.newPage();
+for(const width of [1440,1024,390]){await page.setViewportSize({width,height:900});await page.goto('http://127.0.0.1:3017',{waitUntil:'networkidle'});await page.locator('.program-gallery').scrollIntoViewIfNeeded();await page.getByRole('button',{name:/^Nourish —/}).click();await page.waitForTimeout(900);await page.locator('.expanded img').evaluate(i=>i.decode());await page.locator('.program-gallery').screenshot({path:`qa/rebuild/program-settled-${width}.png`});console.log(width,await page.locator('.expanded .room-description').evaluate(e=>({width:e.clientWidth,contentWidth:e.scrollWidth})))}await browser.close();

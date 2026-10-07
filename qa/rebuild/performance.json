@@ -1,0 +1,23 @@
+{
+  "note": "Local production Chromium, unthrottled, fresh contexts. Not a Lighthouse score or field measurement.",
+  "results": [
+    {
+      "width": 1440,
+      "lcpMs": 48,
+      "cls": 0.015766896716459297,
+      "navigationMs": 49.09999990463257,
+      "transferredBytes": 368371,
+      "scriptBytes": 164990,
+      "requests": 31
+    },
+    {
+      "width": 390,
+      "lcpMs": 128,
+      "cls": 0.00705042735042735,
+      "navigationMs": 91.59999990463257,
+      "transferredBytes": 329889,
+      "scriptBytes": 164990,
+      "requests": 25
+    }
+  ]
+}

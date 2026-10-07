@@ -1,4 +1,96 @@
-import type { Metadata } from 'next';
-import { PageHero, Eyebrow, TextLink, Closing, SourceNote } from '@/components/ui';
-export const metadata:Metadata={title:'Our impact',description:'Dated results, community policy milestones, and stories from America On Track’s published impact archive.'};
-export default function Impact(){return <><PageHero label="Our impact" title={<>What changes?<br/><em>What’s possible.</em></>} description="Confidence to lead. A trusted mentor. A healthier place to grow. Our impact is about opportunity—and the work it takes to create it."/><section className="impact-ledger"><div className="wrap"><div className="ledger-head"><Eyebrow>A documented year of work</Eyebrow><h2>2019 / By the numbers</h2></div><div className="ledger-columns"><article><span className="big-number">5,597</span><h3>Opportunities to learn and connect.</h3><p>PE and nutrition classes, presentations, resource booths, health fairs, leadership sessions, merchant trainings, and special events across five core programs.</p></article><article><span className="big-number">259,452</span><h3>Reported service contacts.</h3><p>The source counts repeated participation in ongoing classes, presentations, and trainings. This figure includes duplicated individuals; it is not a count of unique people.</p></article></div><p className="ledger-note">Historical results reported for 2019. These figures do not describe 2026 operations. Source: America On Track’s Results page.</p></div></section><section className="quote-feature wrap"><Eyebrow>From mentee to mentor</Eyebrow><div><blockquote>“I definitely want<br/>to pay it forward.”</blockquote><p>A former Brighter Futures mentee who became a mentor.<br/>Published testimonial; date and name not supplied by the source.</p></div></section><section className="detail-band"><div className="wrap details-layout"><h2>Healthier communities.<br/>Lasting milestones.</h2><div className="accordion"><details open><summary>2023 · Buena Park</summary><p>America On Track reports work toward the smoke-free city and multi-unit housing ordinance passed in July 2023, extending its community policy efforts.</p></details><details><summary>2018 · Stanton</summary><p>The organization reports its role in initiating the city’s smoke-free parks ordinance, passed in July 2018.</p></details><details><summary>2012 · Santa Ana</summary><p>America On Track reports work supporting the smoke-free parks ordinance passed in February 2012.</p></details><details><summary>How we read these results</summary><p>These milestones describe historical achievements reported by America On Track, not current legal advice. The dedicated policy page also reports 95 housing complexes representing 6,018 units adopting voluntary smoke-free policies; the reporting period is not given, so that total is not presented as a current-year result.</p></details></div></div></section><section className="impact-stories wrap"><article><Eyebrow>A connection that lasted</Eyebrow><h2>Sy & Joseph.</h2><p>America On Track matched 13-year-old Joseph with mentor Sy in 2008. Five years later, Sy shared that Joseph was employed and supporting himself. A 2020 update reported that he was still doing well.</p><p>A story of sustained encouragement, told in the organization’s historical results archive.</p><TextLink href="/get-involved#mentor">Explore becoming a mentor</TextLink></article><article><Eyebrow>Learning from the work</Eyebrow><h2>Evidence informs the next step.</h2><p>America On Track describes a commitment to formative evaluation: using what it learns to improve programs. Its Results page reports work with the Center for Applied Research Solutions beginning in 1998.</p><p>For current evaluation reports or the latest annual results, contact the organization directly.</p><TextLink href="/contact">Request current impact information</TextLink></article></section><div className="wrap"><SourceNote slug="results">Results are intentionally dated and distinguished from current-year activity.</SourceNote></div><Closing title="Be part of what happens next."/></>}
+import { Intro, Source, Action, Invitation } from "@/components/elements";
+export const metadata = { title: "Impact & results" };
+export default function Impact() {
+  return (
+    <>
+      <Intro eyebrow="Our impact" title="Care, put" accent="into practice.">
+        <p>
+          Our work is measured in experiences, sustained support, and healthier
+          environments. Here’s what the published record tells us.
+        </p>
+      </Intro>
+      <section className="impact-mast">
+        <div className="wrap">
+          <p className="eyebrow">A documented year · 2019 results</p>
+          <div className="impact-numbers">
+            <div>
+              <strong>5,597</strong>
+              <h2>Opportunities to learn & participate</h2>
+              <p>
+                Classes, presentations, trainings, resource booths, health
+                fairs, leadership sessions, and special events conducted in
+                2019.
+              </p>
+            </div>
+            <div>
+              <strong>259,452</strong>
+              <h2>Service contacts</h2>
+              <p>
+                Duplicated youth and adult contacts, including repeated
+                participation in classes and training. This is not a count of
+                unique people.
+              </p>
+            </div>
+          </div>
+          <Source path="results">
+            Read the published results and methodology context
+          </Source>
+        </div>
+      </section>
+      <section className="wrap content-section">
+        <p className="impact-statement">
+          An opportunity matters more when it’s part of{" "}
+          <em>something that lasts.</em>
+        </p>
+      </section>
+      <section className="wrap content-section">
+        <div className="section-lead">
+          <h2>
+            Beyond
+            <br />
+            <em>the classroom.</em>
+          </h2>
+          <p>
+            Individual learning and community environments are both part of
+            prevention.
+          </p>
+        </div>
+        <div className="practice-grid">
+          <article className="practice">
+            <h3>Schools that move</h3>
+            <p>
+              The published fitness program describes work in 21 schools since
+              2006—a historical total, supported by physical education and
+              training.
+            </p>
+          </article>
+          <article className="practice">
+            <h3>Places that protect</h3>
+            <p>
+              Reported policy milestones include smoke-free parks in Santa Ana
+              (2012) and Stanton (2018), and work toward Buena Park policies in
+              2023.
+            </p>
+          </article>
+          <article className="practice">
+            <h3>Evidence that informs</h3>
+            <p>
+              America On Track reports working with the Center for Applied
+              Research Solutions since 1998 to inform program decisions and
+              improvement.
+            </p>
+          </article>
+        </div>
+        <div className="support-note">
+          <p>
+            Looking for recent outcomes or a specific program’s evaluation? Ask
+            the team for current reporting. We keep historical results clearly
+            dated.
+          </p>
+          <Action href="/contact">Ask about the results</Action>
+        </div>
+      </section>
+      <Invitation />
+    </>
+  );
+}

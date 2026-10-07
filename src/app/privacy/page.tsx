@@ -1,4 +1,44 @@
-import type { Metadata } from 'next';
-import { PageHero } from '@/components/ui';
-export const metadata:Metadata={title:'Privacy & this preview'};
-export default function Privacy(){return <><PageHero label="Privacy" title={<>Your information.<br/><em>Handled thoughtfully.</em></>} description="This locally hosted website is an independent redesign proposal for America On Track."/><div className="wrap privacy-body"><h2>About this preview</h2><p>This preview does not include analytics, advertising trackers, accounts, or submission forms. Fonts and the displayed program images are hosted with the site. The local server handles ordinary requests needed to display pages and images.</p><h2>Official forms and donations</h2><p>Donation, volunteer, mentor, teen interest, event, and email-list links take you to forms published by America On Track, primarily on Wufoo. Information you submit there is handled by the organization and its service providers under their policies. This preview does not receive that information.</p><h2>The organization’s privacy information</h2><p>Read <a href="https://americaontrack.org/privacy-policy/">America On Track’s published Privacy Policy</a> and, where relevant, its <a href="https://americaontrack.org/sms-disclosure/">SMS Disclosure</a>. Contact <a href="mailto:PR@AmericaOnTrack.org">PR@AmericaOnTrack.org</a> with questions about information submitted to the organization.</p><h2>Proposal content</h2><p>Program copy and media are adapted from the organization’s public website for this presentation. Published content was reviewed on October 2, 2026. Historical dates and source limitations are identified where material.</p></div></>}
+import { Intro, Source } from "@/components/elements";
+export const metadata = { title: "Privacy & site information" };
+export default function Privacy() {
+  return (
+    <>
+      <Intro
+        eyebrow="Privacy & site information"
+        title="Clear about"
+        accent="the details."
+      />
+      <div className="wrap prose">
+        <h2>About this local website</h2>
+        <p>
+          This is a privately developed redesign proposal for America On Track.
+          It is not the organization’s official public website. Program
+          information and photographs come from the organization’s published
+          materials, reviewed October 7, 2026.
+        </p>
+        <h2>Forms and donations</h2>
+        <p>
+          This preview does not collect form submissions, process payments, or
+          use analytics. Participation and giving links lead to the
+          organization’s official third-party forms, which have their own
+          privacy practices.
+        </p>
+        <h2>Organization policies</h2>
+        <p>
+          For America On Track’s current privacy and messaging terms, consult
+          the official sources.
+        </p>
+        <Source path="privacy-policy">Official privacy policy</Source>
+        <br />
+        <Source path="sms-disclosure">Official SMS disclosure</Source>
+        <h2>Photography and reporting</h2>
+        <p>
+          Images show real America On Track activities and people. They are not
+          presented as photographs of 2026 participants. Historical results
+          remain dated, and published board affiliations are not independently
+          verified employment records.
+        </p>
+      </div>
+    </>
+  );
+}

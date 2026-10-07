@@ -1,6 +1,135 @@
-import type { Metadata } from 'next';
-import { Photo, Eyebrow, Button, TextLink, Closing, SourceNote } from '@/components/ui';
-import { links } from '@/lib/content';
-export const metadata:Metadata={title:'2026 Kids On Track Golf Tournament',description:'October 26, 2026 at The Huntington Club, Huntington Beach. Play, sponsor, or attend to support America On Track’s youth leadership programs.'};
-const schedule=[['9:00 AM','Registration, putting contest & driving range open'],['10:45 AM','Players go to carts'],['11:00 AM','Shotgun start · Four-person scramble · Boxed lunches'],['4:00 PM','19th Hole reception & silent auction'],['4:30 PM','Awards dinner, live auction & raffle'],['6:30 PM','Check-out & prize pickup']];
-export default function Golf(){return <><section className="event-hero"><div className="wrap"><div><Eyebrow>One day on the course. A lasting contribution.</Eyebrow><h1>Kids On Track<br/>Golf Tournament.</h1><p>Supporting America On Track’s youth leadership development programs.</p><div className="event-actions"><Button href={links.golf}>Register to play</Button><Button href={links.sponsor} secondary>Become a sponsor</Button></div></div><div className="event-art"><Photo src="golf.png" alt="Kids On Track golf artwork showing many hands supporting a golf ball" priority/><div className="event-date">MONDAY<br/>OCTOBER 26, 2026</div></div></div></section><section className="event-content wrap"><div><Eyebrow>The place</Eyebrow><h2 style={{marginTop:20}}>A day at<br/>The Huntington Club.</h2><p>6501 Palm Avenue<br/>Huntington Beach, CA 92648</p><p>The published golf package includes 18 holes, lunch and beverages on the course, an awards dinner, and tee prizes. Golf Chairman: Mike Lake, Crevier BMW.</p><TextLink href="https://www.google.com/maps/search/?api=1&query=The+Huntington+Club+6501+Palm+Avenue+Huntington+Beach">Get directions</TextLink><p style={{marginTop:25}}>Registration and sponsorship details are available through the organization’s official forms. Contact the team for current pricing and availability.</p></div><div><h2>The day, at a glance.</h2>{schedule.map(([time,text])=><div className="schedule-row" key={time}><time>{time}</time><span>{text}</span></div>)}<TextLink href={links.schedule}>Download the 2026 schedule & map</TextLink></div></section><section className="event-support wrap"><Eyebrow>Make it your kind of contribution</Eyebrow><h2 style={{marginTop:20}}>You don’t have to swing a club.</h2><div className="support-links"><TextLink href={links.dinner}>Attend the awards dinner</TextLink><TextLink href={links.sponsor}>Sponsor the event or a tee sign</TextLink><TextLink href={links.auction}>Donate an auction item</TextLink><TextLink href={links.golf}>Put together a foursome</TextLink></div><SourceNote slug="golf-tournament">Date, venue, and schedule verified against the organization’s March 2026 event PDF. Links continue to official event forms.</SourceNote></section><Closing title="A good day for a brighter future." text="Play, sponsor, or celebrate with us in support of young people." href={links.golf} cta="Register for the tournament"/></>}
+import Image from "next/image";
+import { Action, Source } from "@/components/elements";
+import { links } from "@/lib/content";
+export const metadata = { title: "2026 Kids On Track Golf" };
+export default function Golf() {
+  return (
+    <>
+      <section className="event-hero">
+        <div className="wrap">
+          <p className="eyebrow">
+            Monday, October 26, 2026 · The Huntington Club
+          </p>
+          <div className="event-poster">
+            <div>
+              <h1>
+                Good company.
+                <br />
+                Great cause.
+                <br />
+                <em>Let’s golf.</em>
+              </h1>
+              <p>
+                Kids On Track Golf Tournament
+                <br />A day on the course for youth mentoring and leadership.
+              </p>
+              <Action href={links.golf} light>
+                Register for the tournament
+              </Action>
+            </div>
+            <div className="golf-orb">
+              <Image
+                src="/images/golf.png"
+                width={230}
+                height={245}
+                alt="Kids On Track Golf artwork: many hands supporting a golf ball"
+                priority
+              />
+            </div>
+          </div>
+          <div className="event-meta">
+            <div>
+              <strong>October 26</strong>
+              <span>Monday · 2026</span>
+            </div>
+            <div>
+              <strong>The Huntington Club</strong>
+              <span>6501 Palm Ave. · Huntington Beach</span>
+            </div>
+            <div>
+              <strong>18 holes</strong>
+              <span>Lunch, course beverages, awards dinner & tee prizes</span>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className="wrap content-section">
+        <div className="section-lead">
+          <h2>
+            Make a day
+            <br />
+            <em>of it.</em>
+          </h2>
+          <p>
+            Join Golf Chairman Mike Lake of Crevier BMW and help support America
+            On Track’s mentoring and leadership programs.
+          </p>
+        </div>
+        <div className="schedule-grid">
+          <div>
+            <strong>9:00 am</strong>
+            <h3>Welcome & warm up</h3>
+            <p>Registration and driving range open.</p>
+          </div>
+          <div>
+            <strong>11:00 am</strong>
+            <h3>Shotgun start</h3>
+            <p>Head out for a day on the course.</p>
+          </div>
+          <div>
+            <strong>4:30 pm</strong>
+            <h3>Awards dinner</h3>
+            <p>Come together after the tournament.</p>
+          </div>
+        </div>
+        <a className="source" href={links.schedule}>
+          Official 2026 schedule & location PDF ↗
+        </a>
+      </section>
+      <section className="wrap pathways" aria-label="Support the tournament">
+        {[
+          [
+            "Sponsor the event",
+            "Help make the day possible through an event sponsorship or tee sign.",
+            "Explore sponsorship",
+            links.sponsor,
+          ],
+          [
+            "Join the dinner",
+            "Celebrate the work and enjoy the awards dinner with the community.",
+            "Dinner registration",
+            links.dinner,
+          ],
+          [
+            "Donate an auction item",
+            "Contribute to the fundraiser through an auction donation.",
+            "Auction donation form",
+            links.auction,
+          ],
+          [
+            "Bring a foursome",
+            "Gather friends or colleagues for a round with a shared purpose.",
+            "Register golfers",
+            links.golf,
+          ],
+        ].map(([title, text, label, href]) => (
+          <article className="pathway" key={title}>
+            <div>
+              <h2>{title}</h2>
+              <p>{text}</p>
+            </div>
+            <Action href={href}>{label}</Action>
+          </article>
+        ))}
+      </section>
+      <div className="wrap" style={{ paddingBottom: 60 }}>
+        <p className="source-note">
+          Event details follow the organization’s published 2026 page and
+          schedule. Registration and availability are confirmed on the official
+          forms.
+        </p>
+        <Source path="golf-tournament">Official event page</Source>
+      </div>
+    </>
+  );
+}
