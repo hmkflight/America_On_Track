@@ -16,7 +16,7 @@ for (const width of [1440, 390]) {
         if (!e.hadRecentInput) window.aotCls += e.value;
     }).observe({ type: "layout-shift", buffered: true });
   });
-  await page.goto("http://127.0.0.1:3017", { waitUntil: "networkidle" });
+  await page.goto("http://127.0.0.1:3026", { waitUntil: "networkidle" });
   await page.evaluate(() => document.fonts.ready);
   await page.waitForTimeout(500);
   results.push(
@@ -38,7 +38,7 @@ for (const width of [1440, 390]) {
   await context.close();
 }
 await fs.writeFile(
-  "qa/rebuild/performance.json",
+  "qa/reconstruction/performance.json",
   JSON.stringify(
     {
       note: "Local production Chromium, unthrottled, fresh contexts. Not a Lighthouse score or field measurement.",

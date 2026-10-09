@@ -1,0 +1,22 @@
+[
+  {
+    "test": "Touch selection",
+    "pass": true
+  },
+  {
+    "test": "Touch program navigation",
+    "pass": true
+  },
+  {
+    "test": "Keyboard selection with images unavailable",
+    "pass": true
+  },
+  {
+    "test": "Visible keyboard focus",
+    "pass": true
+  },
+  {
+    "test": "Navigation without View Transitions or images",
+    "pass": true
+  }
+]

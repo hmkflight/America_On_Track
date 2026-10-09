@@ -1,44 +1,25 @@
-import { Intro, Source } from "@/components/elements";
-export const metadata = { title: "Privacy & site information" };
+import { Reader, Block, Action } from "@/components/reader";
+import policy from "@/lib/privacy-policy.json";
+export const metadata = { title: "Privacy policy" };
 export default function Privacy() {
-  return (
-    <>
-      <Intro
-        eyebrow="Privacy & site information"
-        title="Clear about"
-        accent="the details."
-      />
-      <div className="wrap prose">
-        <h2>About this local website</h2>
-        <p>
-          This is a privately developed redesign proposal for America On Track.
-          It is not the organization’s official public website. Program
-          information and photographs come from the organization’s published
-          materials, reviewed October 7, 2026.
-        </p>
-        <h2>Forms and donations</h2>
-        <p>
-          This preview does not collect form submissions, process payments, or
-          use analytics. Participation and giving links lead to the
-          organization’s official third-party forms, which have their own
-          privacy practices.
-        </p>
-        <h2>Organization policies</h2>
-        <p>
-          For America On Track’s current privacy and messaging terms, consult
-          the official sources.
-        </p>
-        <Source path="privacy-policy">Official privacy policy</Source>
-        <br />
-        <Source path="sms-disclosure">Official SMS disclosure</Source>
-        <h2>Photography and reporting</h2>
-        <p>
-          Images show real America On Track activities and people. They are not
-          presented as photographs of 2026 participants. Historical results
-          remain dated, and published board affiliations are not independently
-          verified employment records.
-        </p>
-      </div>
-    </>
-  );
+  return <Reader tone="dark" label="Information / Privacy" title="Your information matters." summary="America On Track’s privacy policy, data rights and communication choices.">
+    <p className="eyebrow">Privacy policy</p>
+    <p className="lead">{policy.introduction}</p>
+    <nav className="article-contents" aria-label="Privacy policy sections">
+      <h2>In this policy</h2>
+      {policy.sections.map((section, i) => <a href={`#policy-${i + 1}`} key={section.title}>{section.title}<span aria-hidden="true">↓</span></a>)}
+    </nav>
+    {policy.sections.map((section, i) => <section className="text-block" id={`policy-${i + 1}`} key={section.title}>
+      <h2>{section.title}</h2>{section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+    </section>)}
+    <Block title="Questions or a privacy request">
+      <Action href="mailto:ExecSupport@AmericaOnTrack.org">Email executive support</Action>
+      <Action href="tel:+17145317144" secondary>Call 714 531 7144</Action>
+      <Action href="/privacy/sms" secondary>SMS disclosure & choices</Action>
+    </Block>
+    <Block title="About this website">
+      <p>Donation, event and participation forms are hosted by America On Track’s external service provider, Wufoo. This website has no account system or payment processor. No analytics or advertising trackers have been added; fonts and images are served locally.</p>
+      <p className="note">The organization’s published policy wording is preserved above. Transferred to this website on October 8, 2026; this transfer date is not a new policy effective date.</p>
+    </Block>
+  </Reader>;
 }

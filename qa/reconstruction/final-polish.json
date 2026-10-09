@@ -1,0 +1,56 @@
+[
+  {
+    "width": 1440,
+    "route": "/contact",
+    "overflow": false,
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "route": "/resources",
+    "overflow": false,
+    "violations": []
+  },
+  {
+    "width": 1440,
+    "route": "/about/history",
+    "overflow": false,
+    "violations": []
+  },
+  {
+    "width": 1024,
+    "route": "/contact",
+    "overflow": false,
+    "violations": []
+  },
+  {
+    "width": 1024,
+    "route": "/resources",
+    "overflow": false,
+    "violations": []
+  },
+  {
+    "width": 1024,
+    "route": "/about/history",
+    "overflow": false,
+    "violations": []
+  },
+  {
+    "width": 390,
+    "route": "/contact",
+    "overflow": false,
+    "violations": []
+  },
+  {
+    "width": 390,
+    "route": "/resources",
+    "overflow": false,
+    "violations": []
+  },
+  {
+    "width": 390,
+    "route": "/about/history",
+    "overflow": false,
+    "violations": []
+  }
+]

@@ -18,10 +18,20 @@ All photography and event artwork below were downloaded from America On Track’
 | stem.jpg | 600 × 389 | https://americaontrack.org/wp-content/uploads/2023/09/ELCE-Zoe-Atia-Najma-Tori-Kaylee-Cranberry-Building-Project-1-1.jpg | Explorer, volunteer, prevention detail; authentic learning activity, not represented as a drug-prevention-specific session. |
 | terry.jpg | 483 × 510 | https://americaontrack.org/wp-content/uploads/2023/09/TerryNoBorder.jpg | Founder portrait, moderate-resolution original. |
 
-## Other assets
+## Current reconstruction treatment
 
-- Retired fonts: Barlow Condensed and Manrope are no longer included in production. Their original download evidence remains in research/raw/fonts.css.
-- New fonts: DM Sans Variable (@fontsource-variable/dm-sans 5.3.0) and Instrument Serif italic (@fontsource/instrument-serif 5.3.0), locally bundled through npm. SIL Open Font Licenses copied to public/fonts/DM-Sans-LICENSE.txt and Instrument-Serif-LICENSE.txt.
-- New aperture wordmark, favicon, dimensional photo frames, program-room glyphs and archive folios: original SVG/CSS compositions for this rebuild. Architectural forms are a visual metaphor, not a model of a physical America On Track facility. Retired brand bars and connection network have been removed.
-- Downloaded but rejected: HighFiveBlack nutrition graphic (text too dense) and original globe mark (not used in evolved wordmark). Preserved under research/raw/unused-assets for provenance.
-- Next Image generates responsive WebP/AVIF derivatives locally; descriptive alt text supplied; original photos never edited to alter their factual content.
+Authentic images are arranged as photographic planes in an original CSS exhibition. The arrangement is conceptual, not a map or evidence of program co-enrollment. The Drug-Use Prevention image remains identified as a general learning activity on its detail page. Nutrition photography depicts the education team. No factual retouching, invented identities or synthetic participants.
+
+Unbounded Variable and Public Sans Variable 5.3.0 are bundled locally from Fontsource, with SIL licenses in public/fonts. All previous font packages removed; prior license files archived outside production.
+
+Original new work: text wordmark treatment, asterisk identifier, photo assembly, interface geometry, evidence document and event poster. No reference-site assets or code copied. The glyph is a proposal identifier, not a claim to replace the client’s legal brandmark.
+
+The full original set of 13 client images remains recoverable in public/images. Unused originals are intentionally preserved; they are not automatically downloaded by visitors. Earlier usage notes in the table record provenance and past contexts, not a requirement to reuse the same page placement.
+
+Cross-page photo transitions retain a single source image while its frame changes. No depth map or invented background was generated. All CSS light/shadow effects are on the display planes, not alterations to participants or scenes. The archive photo is displayed at a size appropriate to its 380×403 source.
+
+## Locally preserved retirement dependencies — 2026-10-09 UTC
+
+- `public/documents/golf-schedule-2026.pdf`: original 2026 schedule/location PDF, downloaded unchanged from the first-party event page (388 KB).
+- `public/images/sponsors/`: 20 original sponsor graphics downloaded from the event page and optimized to WebP, without enlargement. Original URLs recorded in `raw/2026-10-09/sponsors.json`. Names checked against a rendered contact sheet; attribution remains under the source's 2025 sponsor heading.
+- First-party assets are used as part of the authorized replacement site. No new ownership or third-party trademark rights are claimed.

@@ -1,26 +1,18 @@
-# Rendered creative reviews
+# Browser-driven creative reviews — 8 October 2026
 
-## Review 1 — Initial visual system
-Inspected full homepage captures at 1440 and 390. The centered, wide DM Sans / Instrument Serif composition, monochromatic architectural lilac field, and rounded dimensional aperture are substantially removed from the retired condensed-type/navy/yellow system. The first hero depth felt too polite. Kept the clear type composition, revised the interaction.
+## A — Architecture
+Compared actual new opening with `qa/previous/home-1440.png` and `qa/rebuild/home-1440.png`. Prior versions were long vertical campaigns: asymmetric editorial hero/connection scales, then lavender aperture/program rooms. New opening is a single exhibition canvas with six direct program controls. Depth lives on dedicated reading routes. Keep this architecture; do not add mission/stat/history bands underneath it.
 
-## Review 2 — Advanced experience
-Replaced the initial three-image selector entirely. The new “Open the space” action physically parts the surrounding frames and brings authentic learning and leadership photographs out from behind the mentoring scene. Opening is the visual metaphor and the interaction. CSS perspective, transform-style, Z layering, pointer-responsive rotation and directional reveal produce depth without a WebGL dependency. Captured closed/open/pointer states at 1440, 1024 and 390. Mobile side images were initially too obscured: staggered them lower, extended the scene, and retained the complete interaction. No indefinite animation, scroll hijacking or meaningless spinning forms.
+## B — Visual experience
+First 1440/1024/390 screenshots showed a compelling photo assembly but over-tight type and mobile information too far below the controls. Increased display spacing, separated summary and image zones, and placed selected-program context above the mobile controls. Focus mode keeps a readable heading instead of a low-opacity oversized heading. User-driven perspective and rotation retained; automatic camera/parallax rejected as unnecessary.
 
-## Review 3 — Whole-site coherence
-Inspected leadership, history, program details, giving, contact, impact and golf. The aperture reappears as a restrained framing device; each page has a distinct composition: dark event poster, paired impact figures, archive folios, founder diptychs with a governance assembly, and program anatomy. History folios settle on scroll where supported. Replaced hover/focus activation in the program gallery with explicit click/tap toggles, so inspection of one program is stable and the expanded state is predictable.
+## C — Whole-site coherence
+Rejected first large 19/95 history graphic because it echoed the previous implementation. Replaced it with a real archival photograph and native chapter disclosures. Replaced the initial founder diptych/grid with selectable portrait planes and a governance table. Evidence uses a dated ledger; event uses a calendar poster; resources use live search; contact details were moved into the opening exhibit for immediate mobile access. Removed a duplicate history image. Paired exhibit/reader composition stays consistent without repeating homepage sections.
 
-## Review 4 — Final polish
-First full 54-route/width scan found no overflow but muted-text contrast failures on lilac surfaces. Darkened the muted token. A decorative perspective floor intercepted the hero controls: removed pointer handling on that layer. Browser QA then passed all page-level accessibility checks and interaction assertions. Removed a test-only image attribute mutation that raced React hydration; final production checks use ordinary scrolling to load images. Source formatting and unused prototype CSS cleanup completed. Final expanded-state tests added explicit modal Tab cycling. A visual review of the no-JavaScript grid caught clipping not detected by page-level overflow checks; fixed the grid, disabled its entrance animation, and added content-width assertions.
+## D — Presentation and motion
+Inspected production screenshots and interactive states. Corrected tiny red labels at 4.39:1 and faint exhibit captions on red/mint fields. The final shared-image transition initially ghosted two differently cropped snapshots; rejected that version. Keeping one new image snapshot, cropping it within the moving frame, removes the double image. Confirmed actual running View Transition animations at 1440/1024/390, settled images, no runtime errors, and no running transitions under reduced motion. Refined the abstract graphic size to prevent interference with summary copy.
 
 ## Similarity audit
-Directly compared qa/previous/home-1440.png with the rebuilt homepage and internal-page captures.
-- Hero: retired left/right editorial split → full-width typographic architectural environment.
-- Type: retired Barlow Condensed/Manrope → wide variable DM Sans / italic Instrument Serif.
-- Palette: retired navy/paper/yellow/orange → aubergine/lilac/rose/near-white.
-- Program system: retired numbered rows and three audience scales → six expandable spatial rooms, with audience filters.
-- Motion: retired network expansion and horizontal copy changes → aperture opening, Z-depth, room-width redistribution, archive settling.
-- History: retired timeline → archival folios with oversized dates.
-- Governance: retired people lists → founder diptychs and a typographic assembly preserving every board.
-- Section rhythm: environmental opening, quiet mission, interactive gallery, sculptural date, dark community field, event invitation.
+Meaningful architectural distance from both supplied builds: no stacked homepage narrative, no three-scale connection explorer, no aperture or program rooms, no folded corners, no condensed display/serif-italic pairing, no navy/paper/yellow or lavender scheme. The photographic assembly, wide Unbounded type, saturated blue stage, context/focus navigation and persistent reading composition are a different direction. Shared client photos and facts are intentional, not evidence of visual inheritance. Conventional links and disclosure controls are retained as universal usability patterns. No access to unrelated projects is claimed.
 
-Result: passes comparison with the retired build. Replacing only CSS could not create the new structure or interactions. Shared authentic photographs intentionally remain; their reuse is evidence continuity, not visual-system reuse. Other unspecified recent projects were not available as comparison references. No copied reference-site layout or artwork is used.
+Evidence: `qa/reconstruction/` contains opening/focus states, all major page types, short mobile, reduced-motion, no-JS, transition frames, resilience tests and automated reports. Screenshots are browser captures; no mockup imagery is substituted for the rendered app.

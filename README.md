@@ -1,43 +1,51 @@
-# America On Track — Room to become.
+# America On Track — The Whole Picture
 
-A new 18-page local website built with Next.js, React, and TypeScript. The retired visual implementation has been replaced completely. Authentic organizational content and photographs remain; all transactions and applications link to official forms.
+A complete reconstruction built with Next.js, React and TypeScript. The opening is a photographic exhibition with six program focuses; deeper routes pair visual exhibits with readable documents. No previous visual system is active.
 
-## Run locally
+## Local preview
 
 ```sh
 npm ci
 npm run build
-npm run start -- --port 3017
+npm run start -- --port 3026
 ```
 
-Open **http://127.0.0.1:3017**. For development: `npm run dev -- --port 3017`.
+Open http://127.0.0.1:3026. Development: `npm run dev -- --port 3026`.
 
-## Verify
+## Verification
 
 ```sh
 npm run lint
 npm run typecheck
 npm run build
 npm run qa
-node scripts/edge-review.mjs
+npm run qa:visual
 node scripts/external-links.mjs
 node scripts/performance.mjs
 npm audit --omit=dev
 ```
 
-Browser scripts expect a running server on port 3017 and Playwright Chromium (`npx playwright install chromium` if missing). QA uses 18 pages at 1440, 1024, and 390px, plus a 390×600 state. It checks axe WCAG A/AA rules, console errors, image loading, overflow, navigation, program filtering, disclosures, reduced motion, focus restoration, internal links, and no-JavaScript content. Expanded visual states and focus trapping receive additional checks. Evidence is in `qa/rebuild/`.
+Browser checks require a running local server and Playwright Chromium. `QA_BASE` can override the main suite’s default URL. Evidence is in `qa/reconstruction/`. The suite covers 18 pages at 1440/1024/390px, short 390/320px states, program focus, audience filters, menu keyboard behavior, archive/board disclosures, portraits, resource search, no-JS and reduced-motion behavior, internal destinations, images, overflow, console errors and axe WCAG A/AA checks.
 
-## Implementation
+## Structure
 
-- `src/app/`: the complete new route set and CSS visual system.
-- `src/components/aperture.tsx`: interactive CSS 3D photographic environment.
-- `src/components/program-gallery.tsx`: six expandable program rooms and audience filters.
-- `src/components/navigation.tsx`: conventional primary links plus a native modal menu.
-- `src/lib/content.ts`: factual program content, board rosters, milestones, official destinations.
-- `public/images/`: authentic first-party photographs and event artwork.
-- Fonts: locally bundled DM Sans Variable and Instrument Serif from Fontsource; licenses in `public/fonts/`.
-- `research/`: original evidence, fresh verification, provenance, creative divergence, and review notes.
-- `research/previous/` and `qa/previous/`: historical documentation and comparison evidence; no prior application is served.
-- `BUILD_REPORT.md`: full handoff, QA results, and known limitations.
+- `src/components/exhibition.tsx`: photographic assembly and audience/program discovery.
+- `src/components/reader.tsx`: server-rendered reading/exhibit composition.
+- `src/components/people-exhibit.tsx`: founder portrait selection.
+- `src/components/shell.tsx`: navigation, modal index, no-JS links and compact footer.
+- `src/components/resources.tsx`: searchable resource directory.
+- `src/lib/content.ts`: verified program descriptions, source links, boards and milestones.
+- `research/`: current evidence, synthesis, directions, decisions and asset provenance.
+- `research/previous`, `qa/previous`, `qa/rebuild`, `scripts/previous`: historical evidence only.
 
-No public deployment, push, backend, payment processor, analytics, or fake submission handler. This local proposal intentionally blocks indexing. Reduced motion preserves every interaction and all essential content is server rendered. CSS perspective and optional scroll-driven transforms need no WebGL.
+Original first-party images are preserved. New fonts are Unbounded and Public Sans, served locally with SIL licenses. CSS perspective is an enhancement; there is no WebGL dependency, render loop, analytics, backend, fake form or payment handler. Participation and giving use official external forms. This private proposal is noindex.
+
+The earlier builds are recoverable at commits `056ed04` and `371a131`. The user-created `scripts/check-links.mjs` remains untouched. See `BUILD_REPORT.md` for actual validation and known limitations.
+
+Additional focused checks: `node scripts/transition-review.mjs` and `node scripts/resilience-review.mjs` exercise shared-image motion, touch, keyboard, missing images and unavailable View Transitions. Full dependency audit currently reports five high-severity development-chain findings associated with one braces advisory; production dependency audit is clear. No forced major-version downgrade was applied.
+
+## Content ownership and retirement of the original site
+
+All informational links now resolve inside this app. Eight additional detail routes cover biographies, awards, results, community health and SMS; `/privacy` contains the transferred full policy. Historical URLs redirect via `src/lib/legacy-routes.json`. The golf PDF and sponsor images are stored in `public/`. Wufoo remains the real external form/payment service.
+
+Run `node scripts/content-migration-qa.mjs` against the running production server to verify migrated pages, accessibility, local links, anchor navigation and legacy redirects. See `research/CONTENT_MIGRATION.md` for the migration and provenance record.

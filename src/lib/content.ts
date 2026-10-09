@@ -11,7 +11,7 @@ export const links = {
   auction:
     "https://americaontrack.wufoo.com/forms/kids-on-track-golf-tournament-donation-form/",
   schedule:
-    "https://americaontrack.org/wp-content/uploads/2026/03/Schedule-Location-of-The-Huntington-Club-2026.pdf",
+    "/documents/golf-schedule-2026.pdf",
   email: "mailto:PR@AmericaOnTrack.org",
   newsletter: "https://americaontrack.wufoo.com/forms/r1qw0owl0zsn6ym",
 };
@@ -20,11 +20,9 @@ export type Program = {
   name: string;
   audience: string;
   format: string;
-  headline: string;
   intro: string;
   image: string;
   alt: string;
-  source: string;
   areas: string[];
   steps: { title: string; text: string }[];
   details: { title: string; text: string }[];
@@ -37,12 +35,10 @@ export const programs: Program[] = [
     name: "Emerging Leaders",
     audience: "Students in grades 4–12",
     format: "After-school leadership & civic engagement",
-    headline: "A voice that carries.",
     intro:
       "Emerging Leaders for Civic Engagement helps young people build the confidence, skills, and sense of purpose to become leaders in their communities.",
     image: "leaders.jpg",
     alt: "America On Track scholarship recipients with Terry Thompson",
-    source: "emerging-leaders-for-civic-engagement-program",
     areas: ["youth", "schools"],
     steps: [
       {
@@ -61,7 +57,7 @@ export const programs: Program[] = [
     details: [
       {
         title: "More than leadership lessons",
-        text: "Fitness, nutrition, LifeSkills drug-use prevention, and a love of reading are woven into the program. The approach supports the whole young person.",
+        text: "Fitness, nutrition, LifeSkills drug-use prevention, and a love of reading are woven into the program. Sessions also build interpersonal and decision-making skills through interactive activities. The approach supports the whole young person.",
       },
       {
         title: "Recognition and scholarships",
@@ -80,12 +76,10 @@ export const programs: Program[] = [
     name: "Brighter Futures",
     audience: "Children with an incarcerated parent & their families",
     format: "Free mentoring & family support",
-    headline: "A place to belong.",
     intro:
       "Brighter Futures for Children of Prisoners brings mentoring, learning, and family support together. Established in 2004, this free program creates opportunities for children navigating parental incarceration.",
     image: "brighter.jpg",
     alt: "A young participant working on a hands-on STEM project",
-    source: "brighter-futures-for-children-of-prisoners",
     areas: ["youth", "families"],
     steps: [
       {
@@ -123,12 +117,10 @@ export const programs: Program[] = [
     name: "Fitness & Active Play",
     audience: "Students, schools, teachers & parents",
     format: "School-based physical education & training",
-    headline: "Space to move.",
     intro:
       "From structured PE to active recess, America On Track helps schools make movement a meaningful part of a child’s day.",
     image: "fitness.png",
     alt: "America On Track physical education activities",
-    source: "fitness",
     areas: ["youth", "schools"],
     steps: [
       {
@@ -151,7 +143,7 @@ export const programs: Program[] = [
       },
       {
         title: "Measuring and supporting progress",
-        text: "The published approach includes California FitnessGram measurements and physical activity policies, alongside staff training.",
+        text: "The published approach includes California FitnessGram measurements and physical activity policies, alongside staff training. Fitness has also been part of the Teen Emerging Leaders program since 1996.",
       },
     ],
     cta: "Bring movement to your school",
@@ -162,12 +154,10 @@ export const programs: Program[] = [
     name: "Nutrition",
     audience: "Youth, adults, families & community partners",
     format: "Education, demonstrations & community action",
-    headline: "Healthy starts here.",
     intro:
       "Practical nutrition education connects everyday choices with healthier environments—at home, in schools, and across the community.",
     image: "nutrition-team.jpg",
     alt: "America On Track’s nutrition education team",
-    source: "nutrition",
     areas: ["families", "schools", "community"],
     steps: [
       {
@@ -201,12 +191,10 @@ export const programs: Program[] = [
     name: "Drug-Use Prevention",
     audience: "Elementary, middle & high school students; adults",
     format: "Multi-week learning & one-hour presentations",
-    headline: "Skills for the everyday.",
     intro:
       "America On Track helps young people develop the confidence and practical skills to resist social pressure and choose healthy alternatives to substance use.",
     image: "stem.jpg",
     alt: "Young people collaborating during an America On Track learning activity",
-    source: "drug-use-prevention-education",
     areas: ["youth", "schools", "families"],
     steps: [
       {
@@ -240,12 +228,10 @@ export const programs: Program[] = [
     name: "Tobacco-Free Communities",
     audience: "Youth, residents, schools, merchants & policymakers",
     format: "Prevention education & community policy work",
-    headline: "Health, beyond the classroom.",
     intro:
       "America On Track connects education, youth leadership, merchant outreach, and policy work to reduce youth access to tobacco and exposure to secondhand smoke.",
     image: "park.jpg",
     alt: "A Santa Ana park pictured in America On Track’s tobacco policy work",
-    source: "tobacco-policies-protect-our-communities",
     areas: ["community", "schools"],
     steps: [
       {

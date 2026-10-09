@@ -1,94 +1,82 @@
-import { Intro, Photo, Invitation, Source } from "@/components/elements";
 import Link from "next/link";
-export const metadata = { title: "Our story" };
+import { Reader, Photo, Block, Action, Source } from "@/components/reader";
+export const metadata = { title: "About us" };
 export default function About() {
   return (
-    <>
-      <Intro
-        eyebrow="Our story"
-        title="Potential is human."
-        accent="So is our work."
-      >
-        <p>
-          Since 1995, America On Track has helped create the relationships,
-          skills, and healthier environments that children and families deserve.
-        </p>
-      </Intro>
-      <div className="wrap">
+    <Reader
+      label="Organization / Our purpose"
+      title="See the person. Change the possibilities."
+      summary="America On Track brings youth leadership, mentoring and community health together in Orange County."
+      visual={
         <Photo
-          name="camp.jpg"
-          alt="America On Track’s college camp community with participants, volunteers and board members"
-          className="about-photo"
+          src="camp.jpg"
+          alt="America On Track camp participants, volunteers and board members holding thank-you letters"
           priority
         />
-      </div>
-      <section className="beliefs">
-        <div className="wrap">
-          <div className="section-lead">
-            <h2>
-              Start with people.
-              <br />
-              <em>Change what’s possible.</em>
-            </h2>
-            <p>
-              Founded by Terry Thompson and Claire Braeburn, America On Track is
-              an independent nonprofit rooted in the needs of Orange County.
-            </p>
+      }
+    >
+      <p className="eyebrow">Independent. Community-rooted. Since 1995.</p>
+      <p className="lead">
+        Growing up is complicated. Support should see the whole picture.
+      </p>
+      <Block title="One organization. Many forms of care.">
+        <p>
+          America On Track’s mission is to inspire brighter futures by building
+          youth leaders, supporting families and strengthening communities
+          through life-transforming programs.
+        </p>
+        <p>
+          Our vision addresses social inequities and health disparities through
+          evidence-based programs: leadership, mentoring, academic achievement,
+          fitness, nutrition and tobacco and drug-use prevention.
+        </p>
+      </Block>
+      <nav className="mini-nav" aria-label="About America On Track">
+        <Link href="/about/leadership">People & boards ↗</Link>
+        <Link href="/about/history">History & recognition ↗</Link>
+        <Link href="/impact">Impact & evidence ↗</Link>
+      </nav>
+      <Block title="Personal support. Healthier surroundings.">
+        <p>
+          A trusted mentor can help a child imagine college. A leadership
+          program can help a teen speak up. A school or neighborhood can make
+          healthier choices easier. America On Track works across these
+          different parts of daily life.
+        </p>
+        <p>
+          Programs reach young people, families, schools, residents and
+          community partners. Each has its own audience, approach and way to
+          participate.
+        </p>
+        <Action href="/programs">Find the right program</Action>
+      </Block>
+      <Block title="Built here, for here.">
+        <p>
+          Terry Thompson and Claire Braeburn founded America On Track in 1995
+          after researching the needs of Orange County’s children and families.
+          The organization remains an independent 501(c)(3) nonprofit.
+        </p>
+        <dl className="facts">
+          <div>
+            <dt>Home</dt>
+            <dd>Santa Ana, Orange County, California</dd>
           </div>
-          <div className="belief-grid">
-            <article>
-              <h3>Our mission</h3>
-              <p>
-                To inspire brighter futures by building youth leaders,
-                supporting families, and strengthening communities through
-                life-transforming programs.
-              </p>
-            </article>
-            <article>
-              <h3>Our vision</h3>
-              <p>
-                More vibrant communities, with fewer social inequities and
-                health disparities. Our work connects leadership, mentoring,
-                academic achievement, fitness, nutrition, and prevention.
-              </p>
-            </article>
+          <div>
+            <dt>Nonprofit EIN</dt>
+            <dd>33-0724044</dd>
           </div>
-        </div>
-      </section>
-      <section className="wrap content-section">
-        <div className="section-lead">
-          <h2>
-            Care becomes
-            <br />
-            <em>something concrete.</em>
-          </h2>
-          <p>
-            A trusted adult. A college experience. A school that makes movement
-            part of every day. A healthier public space. Our programs turn
-            commitment into practical opportunities.
-          </p>
-        </div>
-        <div className="story-links">
-          <Link href="/about/leadership">
-            <p className="eyebrow">People & governance</p>
-            <h3>
-              The people who
-              <br />
-              keep it possible. ↗
-            </h3>
-          </Link>
-          <Link href="/about/history">
-            <p className="eyebrow">History & recognition</p>
-            <h3>
-              Decades of
-              <br />
-              showing up. ↗
-            </h3>
-          </Link>
-        </div>
-        <Source path="our-story" />
-      </section>
-      <Invitation />
-    </>
+        </dl>
+      </Block>
+      <Block title="Support can come full circle">
+        <blockquote className="quote">
+          <p>“I definitely want to pay it forward.”</p>
+          <cite>
+            A former mentee who became a mentor, in America On Track’s published
+            results archive. The account is undated.
+          </cite>
+        </blockquote>
+        <Source path="results">Read participant and mentor accounts</Source>
+      </Block>
+    </Reader>
   );
 }

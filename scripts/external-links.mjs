@@ -3,7 +3,7 @@ import { promisify } from "node:util";
 const exec = promisify(execFile);
 import fs from "node:fs/promises";
 const raw = JSON.parse(
-  await fs.readFile("research/raw/pages-2026-10-07.json", "utf8"),
+  await fs.readFile("research/raw/2026-10-09/pages.json", "utf8"),
 );
 const sourceLinks = new Set(
   raw.flatMap((p) =>
@@ -16,27 +16,6 @@ for (const file of ["src/lib/content.ts", "src/app/resources/page.tsx"]) {
   for (const match of txt.matchAll(/https:\/\/[^'"\s<>]+/g))
     links.add(match[0]);
 }
-for (const path of [
-  "our-story",
-  "board-of-directors",
-  "terry-thompson",
-  "claire-braeburn",
-  "awards",
-  "results",
-  "volunteer",
-  "donate",
-  "contact-us",
-  "golf-tournament",
-  "privacy-policy",
-  "sms-disclosure",
-  "emerging-leaders-for-civic-engagement-program",
-  "brighter-futures-for-children-of-prisoners",
-  "fitness",
-  "nutrition",
-  "drug-use-prevention-education",
-  "tobacco-policies-protect-our-communities",
-])
-  links.add(`https://americaontrack.org/${path}/`);
 const urls = [...links];
 const result = [];
 for (let i = 0; i < urls.length; i += 5) {
@@ -75,6 +54,8 @@ for (let i = 0; i < urls.length; i += 5) {
   );
 }
 await fs.writeFile(
-  "qa/rebuild/external-links.json",
+  "qa/content-migration/external-links.json",
   JSON.stringify(result, null, 2),
 );
+
+process.exitCode = result.some((r) => r.status !== 200 || r.formLinkedFromFreshSource === false) ? 1 : 0;

@@ -1,0 +1,67 @@
+[
+  {
+    "width": 1440,
+    "url": "http://127.0.0.1:3026/programs/brighter-futures",
+    "animations": [
+      {
+        "playState": "running",
+        "pseudo": "::view-transition-group(program-photo-brighter-futures)"
+      },
+      {
+        "playState": "finished",
+        "pseudo": "::view-transition-group(root)"
+      },
+      {
+        "playState": "finished",
+        "pseudo": "::view-transition"
+      }
+    ],
+    "errors": [],
+    "heading": "Brighter Futures"
+  },
+  {
+    "width": 1024,
+    "url": "http://127.0.0.1:3026/programs/brighter-futures",
+    "animations": [
+      {
+        "playState": "running",
+        "pseudo": "::view-transition-group(program-photo-brighter-futures)"
+      },
+      {
+        "playState": "finished",
+        "pseudo": "::view-transition-group(root)"
+      },
+      {
+        "playState": "finished",
+        "pseudo": "::view-transition"
+      }
+    ],
+    "errors": [],
+    "heading": "Brighter Futures"
+  },
+  {
+    "width": 390,
+    "url": "http://127.0.0.1:3026/programs/brighter-futures",
+    "animations": [
+      {
+        "playState": "running",
+        "pseudo": "::view-transition-group(program-photo-brighter-futures)"
+      },
+      {
+        "playState": "finished",
+        "pseudo": "::view-transition-group(root)"
+      },
+      {
+        "playState": "finished",
+        "pseudo": "::view-transition"
+      }
+    ],
+    "errors": [],
+    "heading": "Brighter Futures"
+  },
+  {
+    "reducedMotion": true,
+    "url": "http://127.0.0.1:3026/programs/brighter-futures",
+    "animations": []
+  }
+]

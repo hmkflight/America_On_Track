@@ -1,8 +1,6 @@
-# Sources used
+# Sources — current reconstruction
 
-**Fresh verification on October 7, 2026:** All 21 first-party pages were downloaded again and compared to these earlier captures. See [FRESH_RESEARCH.md](FRESH_RESEARCH.md), `raw/pages-2026-10-07.json`, and `raw/fresh-*.txt`. All nine official forms were matched to freshly retrieved source links and checked successfully.
-
-Research date: October 2, 2026. Primary domain verified by direct HTTP 200, public WordPress API, consistent organizational identity/contact details, and first-party sitemap.
+Freshly retrieved 8 October 2026. All 21 published pages and both sitemaps are captured under `raw/2026-10-08/`. Live homepage inspected in isolated Chromium. Important program, leadership, contact, historical result and event details rechecked against these captures. Prior October 2/7 evidence remains for comparison. See CLIENT_INTELLIGENCE.md for conflicts and EXTERNAL_REFERENCES.md for audience, peer, visual and technical research.
 
 ## First-party pages
 
@@ -31,10 +29,14 @@ Research date: October 2, 2026. Primary domain verified by direct HTTP 200, publ
 ## Other primary materials
 
 - https://americaontrack.org/wp-sitemap.xml and /wp-sitemap-posts-page-1.xml
-- https://americaontrack.org/wp-json/wp/v2/pages?per_page=100 — full content capture of all 21 published pages, preserved in raw/pages.json.
+- https://americaontrack.org/wp-json/wp/v2/pages?per_page=100 — full content capture of all 21 published pages, preserved in raw/2026-10-08/pages.json.
 - https://americaontrack.org/wp-content/uploads/2026/03/Schedule-Location-of-The-Huntington-Club-2026.pdf — dated event schedule and venue. Download preserved.
 - Official Wufoo forms linked directly from Donate, Contact, Volunteer, and Golf pages. No form was submitted.
-- Google Fonts stylesheet for Barlow Condensed and Manrope; fonts served locally.
+- Unbounded and Public Sans via Fontsource npm packages; SIL licenses preserved with the app.
 - Next.js bundled documentation in node_modules/next/dist/docs, especially turbopack configuration.
 
 Search engine results were used for discovery and cross-checking. Main research relied on direct first-party HTML/API content because the web reader repeatedly returned 502 errors. Source freshness is not the same as current operational confirmation.
+
+## Replacement-site content migration — 2026-10-09 UTC
+
+Re-fetched `https://americaontrack.org/wp-json/wp/v2/pages?per_page=100` (21 pages) and preserved the response and cleaned text in `raw/2026-10-09/`. Mapped every original page to an internal replacement or an existing retained route. See `CONTENT_MIGRATION.md` and `src/lib/legacy-routes.json`. Original URLs remain provenance in research only, not dependencies of visitor-facing information links.

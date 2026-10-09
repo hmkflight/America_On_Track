@@ -1,7 +1,14 @@
-import { Intro } from "@/components/elements";
+import { Reader } from "@/components/reader";
+import { ResourceDirectory } from "@/components/resources";
 import { links } from "@/lib/content";
-export const metadata = { title: "Resources" };
+export const metadata = { title: "Resource library" };
 const groups = [
+  { title: "Programs in depth", items: [
+    ["Emerging Leaders", "/programs/emerging-leaders"],
+    ["Brighter Futures & mentoring", "/programs/brighter-futures"],
+    ["Fitness & active play", "/programs/fitness"],
+    ["Tobacco-Free Communities", "/programs/tobacco-free-communities"],
+  ] },
   {
     title: "Join & participate",
     items: [
@@ -25,10 +32,12 @@ const groups = [
   {
     title: "Explore the evidence",
     items: [
-      ["Published results", "https://americaontrack.org/results/"],
-      ["Awards & recognition archive", "https://americaontrack.org/awards/"],
-      ["Board of Directors", "https://americaontrack.org/board-of-directors/"],
-      ["Our story", "https://americaontrack.org/our-story/"],
+      ["Published results", "/resources/results"],
+      ["Awards & recognition archive", "/resources/awards"],
+      ["Board of Directors", "/about/leadership"],
+      ["Our story", "/about"],
+      ["Terry Thompson · biography", "/resources/terry-thompson"],
+      ["Claire Braeburn · biography", "/resources/claire-braeburn"],
     ],
   },
   {
@@ -36,46 +45,36 @@ const groups = [
     items: [
       [
         "Tobacco & vape prevention",
-        "https://americaontrack.org/tobacco-vape-use-prevention/",
+        "/resources/tobacco-vape-use-prevention",
       ],
       [
         "Lowering youth access to tobacco",
-        "https://americaontrack.org/lowering-youth-access-to-tobacco/",
+        "/resources/lowering-youth-access-to-tobacco",
       ],
       [
         "Tobacco policies & communities",
-        "https://americaontrack.org/tobacco-policies-protect-our-communities/",
+        "/resources/tobacco-policies-protect-our-communities",
       ],
       [
         "Drug-use prevention education",
-        "https://americaontrack.org/drug-use-prevention-education/",
+        "/programs/drug-use-prevention",
       ],
-      ["Nutrition education", "https://americaontrack.org/nutrition/"],
+      ["Nutrition education", "/programs/nutrition"],
     ],
   },
+  { title: "Privacy & communication choices", items: [["Privacy policy", "/privacy"], ["SMS disclosure & preferences", "/privacy/sms"]] },
 ];
 export default function Resources() {
   return (
-    <>
-      <Intro eyebrow="Resource library" title="The useful" accent="things.">
-        <p>
-          Forms, program information, and original source material. A direct
-          route to what you need.
-        </p>
-      </Intro>
-      <section className="wrap resource-groups" aria-label="Resource directory">
-        {groups.map((g) => (
-          <article className="resource-group" key={g.title}>
-            <h2>{g.title}</h2>
-            {g.items.map(([n, h]) => (
-              <a key={n} href={h}>
-                {n}
-                <span aria-hidden="true">↗</span>
-              </a>
-            ))}
-          </article>
-        ))}
-      </section>
-    </>
+    <Reader
+      tone="dark"
+      label="Library / Useful things"
+      title="Less searching. More doing."
+      summary="Program guides, our published record and practical ways to take part."
+    >
+      <p className="eyebrow">Resource library</p>
+      <p className="lead">A direct route to what you need.</p>
+      <ResourceDirectory groups={groups} />
+    </Reader>
   );
 }

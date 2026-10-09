@@ -1,79 +1,85 @@
-import { Intro, Action, Photo, Source } from "@/components/elements";
+import {
+  Reader,
+  Photo,
+  Block,
+  Disclosure,
+  Action,
+} from "@/components/reader";
 import { links } from "@/lib/content";
 export const metadata = { title: "Get involved" };
-const ways = [
-  [
-    "Become a mentor",
-    "Be a steady, encouraging presence for a child. Start with the adult mentor interest form; the team will explain qualifications, training, and commitments.",
-    "Adult mentor interest",
-    links.mentor,
-  ],
-  [
-    "Lead as a teen",
-    "Build your own leadership skills while contributing to your community. Explore Emerging Leaders and share your interest.",
-    "Teen interest form",
-    links.teen,
-  ],
-  [
-    "Lend your time",
-    "Support activities, events, and practical work with America On Track. Share your interests and ask about current volunteer opportunities.",
-    "Volunteer interest",
-    links.volunteer,
-  ],
-  [
-    "Bring us together",
-    "Schools, businesses, and community organizations can help create more opportunities. Start a conversation about a partnership.",
-    "Talk about a partnership",
-    links.email,
-  ],
-];
 export default function Involved() {
   return (
-    <>
-      <Intro
-        eyebrow="Get involved"
-        title="You have something"
-        accent="to give."
-      >
-        <p>
-          Time. Experience. Encouragement. There are many ways to make room for
-          someone else’s possibilities.
-        </p>
-      </Intro>
-      <section className="wrap pathways" aria-label="Ways to participate">
-        {ways.map(([title, text, cta, href]) => (
-          <article className="pathway" key={title}>
-            <div>
-              <h2>{title}</h2>
-              <p>{text}</p>
-            </div>
-            <Action href={href}>{cta}</Action>
-          </article>
-        ))}
-      </section>
-      <section className="community-band">
+    <Reader
+      label="Participation / Your part"
+      title="Bring what only you can bring."
+      summary="Time. Curiosity. Experience. A willingness to show up. There are many ways to contribute."
+      visual={
         <Photo
-          name="mentor.jpg"
-          alt="An adult mentor and young participant at an America On Track event"
+          src="mentor.jpg"
+          alt="An America On Track mentor and young participant at a construction-themed event"
+          priority
         />
-        <div>
-          <p className="eyebrow">A relationship can open a world</p>
-          <h2>
-            Showing up
-            <br />
-            <em>is a beginning.</em>
-          </h2>
+      }
+    >
+      <p className="eyebrow">Take part</p>
+      <p className="lead">
+        Start with the role that fits you. We’ll help you find the next step.
+      </p>
+      <Block title="How would you like to participate?">
+        <Disclosure title="I’d like to become an adult mentor" open>
           <p>
-            The first step is a conversation. America On Track will help you
-            understand where your time and experience can make a difference.
+            Build a positive connection with a young person through Brighter
+            Futures. Start with the interest form; the team will explain
+            qualifications, training and expectations.
           </p>
-          <Action href="/programs/brighter-futures" light>
-            Meet Brighter Futures
-          </Action>
-          <br />
-          <Source path="volunteer">Official volunteer information</Source>
-        </div>
-      </section>
-    </>
+          <Action href={links.mentor}>Adult mentor interest form</Action>
+        </Disclosure>
+        <Disclosure title="I’m a teen interested in leadership">
+          <p>
+            Emerging Leaders combines public speaking, civic engagement and
+            learning. The program serves grades 4–12; this interest form is for
+            teens. Families of younger students can contact the team.
+          </p>
+          <Action href={links.teen}>Teen Emerging Leader form</Action>
+        </Disclosure>
+        <Disclosure title="I’d like to volunteer">
+          <p>
+            Share your skills and interests with America On Track. The team can
+            discuss current opportunities and where your time can make a useful
+            contribution.
+          </p>
+          <Action href={links.volunteer}>Volunteer interest form</Action>
+        </Disclosure>
+        <Disclosure title="I’m looking for support for my family">
+          <p>
+            Ask about Brighter Futures and other opportunities. Program
+            availability and participation are confirmed directly with the team.
+          </p>
+          <Action href="/contact">Contact the team</Action>
+        </Disclosure>
+        <Disclosure title="I represent a school or community partner">
+          <p>
+            Explore programs in leadership, fitness, nutrition and prevention,
+            or discuss community health and policy collaboration.
+          </p>
+          <Action href="/programs">Explore programs</Action>
+        </Disclosure>
+      </Block>
+      <Block title="Other ways to show up">
+        <Action href="/events/golf" secondary>
+          Join Kids On Track Golf
+        </Action>
+        <Action href="/donate" secondary>
+          Support the work with a gift
+        </Action>
+        <Action href={links.newsletter} secondary>
+          Join the email list
+        </Action>
+      </Block>
+      <p className="note">
+        Interest forms open America On Track’s official Wufoo pages. Submitting
+        interest begins a conversation; it does not confirm placement.
+      </p>
+    </Reader>
   );
 }

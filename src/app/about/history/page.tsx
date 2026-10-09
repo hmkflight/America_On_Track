@@ -1,73 +1,129 @@
-import { Intro, Photo, Source, Invitation } from "@/components/elements";
+import {
+  Reader,
+  Block,
+  Disclosure,
+  Photo,
+  Source,
+  Action,
+} from "@/components/reader";
 import { milestones } from "@/lib/content";
 export const metadata = { title: "History & recognition" };
 export default function History() {
   return (
-    <>
-      <Intro
-        eyebrow="The America On Track archive"
-        title="A commitment."
-        accent="Still unfolding."
-      >
-        <p>
-          From two founders studying local needs to decades of mentoring,
-          learning, and community health. Open a few chapters of the story.
-        </p>
-      </Intro>
-      <section className="archive wrap" aria-label="Historical chapters">
-        <div className="archive-folios">
-          {milestones.map(([year, title, text]) => (
-            <article className="folio" key={year}>
-              <span className="year">{year}</span>
-              <h2>{title}</h2>
-              <p>{text}</p>
-            </article>
-          ))}
-        </div>
-        <div className="award-feature">
+    <Reader
+      tone="dark"
+      label="Archive / Since 1995"
+      title="A purpose with a history."
+      summary="Decades of practical work, growing from a conviction that children and communities deserve better possibilities."
+      visual={
+        <div className="archive-display">
+          <div className="archive-label">
+            FROM THE ARCHIVE<span>Recognition / November 1998</span>
+          </div>
           <Photo
-            name="award.jpg"
-            alt="Terry Thompson and Claire Braeburn receiving recognition at the White House"
+            src="award.jpg"
+            alt="The founders receiving national recognition at the White House, from the organization’s awards archive"
+            priority
           />
-          <div>
-            <p className="eyebrow">From the archive · National recognition</p>
-            <h2>
-              Service that
-              <br />
-              <em>was seen.</em>
-            </h2>
-            <p>
-              The founders received the President’s Service Award for their work
-              with young people. The Awards page and archival photograph
-              identify November 1998; the Emerging Leaders page gives 1999.
-            </p>
-            <Source path="awards">Explore the complete awards archive</Source>
+          <div className="archive-label">
+            PRESIDENT’S SERVICE AWARD<span>A history of showing up.</span>
           </div>
         </div>
-        <div className="disclosures">
-          <details>
-            <summary>Education, prevention, and community recognition</summary>
-            <p>
-              The published archive includes the 1997 Outstanding Contributions
-              to Education Award; the 2000 Ambassadors of Peace Award; the 2001
-              Outstanding Supporters of Prevention Award; the 2009 Women Making
-              a Difference Award; and the 2010 Community Building Award for the
-              Memorial Exercise Park.
-            </p>
-          </details>
-          <details>
-            <summary>Long-term investment in healthier communities</summary>
-            <p>
-              The archive records Physical Education Program grants in 2007,
-              2011, and 2016; nutrition education grants from 2013–2020; and
-              tobacco-prevention and tobacco-control grants. These are
-              historical awards, not claims of current funding.
-            </p>
-          </details>
-        </div>
-        <Source path="our-story">The founding story</Source>
-      </section>
-      <Invitation />
-    </>
+      }
+    >
+      <p className="eyebrow">The archive</p>
+      <p className="lead">
+        Two founders. A year of research. A lasting commitment to Orange County.
+      </p>
+      <Block title="The beginning">
+        <p>
+          Terry Thompson and Claire Braeburn established America On Track in
+          1995 after studying the challenges facing local children and families.
+          Their combined experience became the foundation for leadership,
+          mentoring, health education and prevention programs.
+        </p>
+      </Block>
+      <Block title="Open a chapter">
+        <Disclosure title="1995–2003 / Establishing the work" open>
+          {milestones.slice(0, 2).map(([y, t, d]) => (
+            <div className="archive-entry" key={y}>
+              <time>{y}</time>
+              <div>
+                <h3>{t}</h3>
+                <p>{d}</p>
+              </div>
+            </div>
+          ))}
+          <div className="archive-entry">
+            <time>1998</time>
+            <div>
+              <h3>National recognition</h3>
+              <p>
+                The awards archive dates the founders’ President’s Service Award
+                at the White House to November 1998.
+              </p>
+              <p className="note">
+                Another program page says 1999. We follow the dedicated awards
+                archive and retain the discrepancy.
+              </p>
+            </div>
+          </div>
+        </Disclosure>
+        <Disclosure title="2004–2016 / Deepening the support">
+          {milestones.slice(2, 5).map(([y, t, d]) => (
+            <div className="archive-entry" key={y}>
+              <time>{y}</time>
+              <div>
+                <h3>{t}</h3>
+                <p>{d}</p>
+              </div>
+            </div>
+          ))}
+        </Disclosure>
+        <Disclosure title="2017 onward / Healthier environments">
+          <div className="archive-entry">
+            <time>2018</time>
+            <div>
+              <h3>Smoke-free parks in Stanton</h3>
+              <p>
+                The organization reports work supporting an ordinance adopted in
+                July 2018.
+              </p>
+            </div>
+          </div>
+          <div className="archive-entry">
+            <time>2020</time>
+            <div>
+              <h3>A quarter-century of service</h3>
+              <p>
+                The awards archive marks 25 years and describes multi-year
+                nutrition, physical education and tobacco-prevention grant
+                support.
+              </p>
+            </div>
+          </div>
+          {milestones.slice(5).map(([y, t, d]) => (
+            <div className="archive-entry" key={y}>
+              <time>{y}</time>
+              <div>
+                <h3>{t}</h3>
+                <p>{d}</p>
+              </div>
+            </div>
+          ))}
+        </Disclosure>
+      </Block>
+      <Block title="Recognition, in context">
+        <p>
+          The published archive records 21 awards and commendations across the
+          organization’s first 25 years. Recognition includes the President’s
+          Service Award, Santa Ana’s 2010 Community Building Award and a 2016
+          Tobacco Control Evaluation Center Certificate of Excellence.
+        </p>
+        <Source path="awards">Explore the full awards & grant archive</Source>
+      </Block>
+      <Action href="/impact">Read the evidence</Action>
+      <Source path="our-story">The organization’s founding story</Source>
+    </Reader>
   );
 }
